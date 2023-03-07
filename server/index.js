@@ -14,9 +14,13 @@ const app = express();
 // 	res.end()
 // });
 
+// Testing connection with React
+app.get("/api", (req, res) => {
+	res.json({ message: "Hello from Express!"});
+});
+
 // Server Setup
-app.listen(PORT,console.log(
-`Server started on port ${PORT}`));
+app.listen(PORT,console.log(`Server started on port ${PORT}`));
 
 // app.get('/express_backend', (req, res) => {
 // 	res.send( { express: 'Your express backend is connected to react.' });
