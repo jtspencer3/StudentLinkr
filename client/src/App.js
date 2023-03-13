@@ -1,9 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Navbar from "./Navigation/Navbar.js";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [data, setData] = React.useState(null);
+ return(
+  <div>
+    <p>Hello</p>
+    <Navbar/>
+    </div>
+ )
+  /*const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
     fetch("/api")
@@ -28,7 +35,7 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  );*/
 }
 
 export default App;
