@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
-import Navbar from "./Navigation/Navbar.js";
+import Navbar from "./components/Navbar.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
 import { Link } from 'react-router-dom';
+import ProfileNavLeft from "./components/ProfileNavLeft.js";
 
 function App() {
  return(
