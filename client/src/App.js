@@ -7,6 +7,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
 import { Link } from 'react-router-dom';
+import ProfileNavLeft from "./components/ProfileNavLeft.js";
 
 function App() {
  return(
