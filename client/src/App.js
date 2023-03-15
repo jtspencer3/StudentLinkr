@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Navbar from "./Navigation/Navbar.js";
+import Navbar from "./components/Navbar.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom"
 import Home from "./pages/Home"
@@ -24,6 +24,7 @@ function App() {
           <li><Link to="/contact">Contact</Link></li>
         </ul>
       </nav> */}
+      
       <Routes>
           <Route path="/" element={ <Home/> } />
           <Route path="about" element={ <About/> } />

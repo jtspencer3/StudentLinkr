@@ -218,6 +218,121 @@ justify-content: space-between
 .r-sdzlij {
   border-radius: 9999px;
 }
+.r-88pszg {
+  margin-right: 16px;
+}
+.r-1joea0r {
+  margin-left: 20px;
+}
+.r-135wba7 {
+  line-height: 24px;
+}
+.r-adyw6z {
+  font-size: 20px;
+}
+.r-18jsvk2 {
+  color: rgb(15, 20, 25);
+}
+.r-b88u0q {
+  font-weight: 700;
+}
+.r-37j5jr {
+  font-family: "TwitterChirp", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.r-qvutc0 {
+  overflow-wrap: break-word;
+}
+.r-bcqeeo {
+  min-width: 0px;
+}
+.css-1hf3ou5 {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+.css-901oao {
+  border: 0px solid black;
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  display: inline;
+  font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: normal;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+  padding: 0px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;}
+  .r-poiln3 {
+    font-family: inherit;
+  }
+  .r-qvutc0 {
+    overflow-wrap: break-word;
+  }
+  .r-bcqeeo {
+    min-width: 0px;
+  }
+  .css-16my406 {
+    color: inherit;
+    font: inherit;
+      font-family: inherit;
+    white-space: inherit;
+  }
+  .css-901oao {
+    border: 0px solid black;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    display: inline;
+    font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+  .r-cnnz9e {
+    width: 1.75rem;
+  }
+  .r-18jsvk2 {
+    color: rgb(15, 20, 25);
+  }
+  .r-lwhw9o {
+    height: 1.75rem;
+  }
+  .r-lrvibr {
+    user-select: none;
+  }
+  .r-1plcrui {
+    vertical-align: text-bottom;
+  }
+  .r-bnwqim {
+    position: relative;
+  }
+  .r-dnmrzs {
+    max-width: 100%;
+  }
+  .r-yyyyoo {
+    fill: currentcolor;
+  }
+  .r-4qtqp9 {
+    display: inline-block;
+  }
+  .r-1loqt21 {
+    cursor: pointer;
+  }
+  .css-4rbku5 {
+    color: inherit;
+    font: inherit;
+    list-style: none;
+    text-align: inherit;
+  }
+  .css-18t94o4 {
+    cursor: pointer;
+  }
 
 @keyframes App-logo-spin {
   from {
