@@ -75,6 +75,7 @@
 .l-212 {
   position: fixed;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -100,6 +101,12 @@
 .App-link {
   color: #61dafb;
 }
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
 /* test */
 .r-eqz5dr {
   -moz-box-direction: normal;
