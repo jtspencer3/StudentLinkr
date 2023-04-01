@@ -533,6 +533,16 @@ a {
 .xcza8v6 {
     color: var(--secondary-icon);
   }
+  .xqcrz7y {
+    align-self: flex-start;
+  }
+  .xx8ngbg {
+    perspective: 1px;
+  }
+  .xwo3gff {
+    perspective-origin: right top;
+  }
+  
 .__studentlinkr {
     --fds-black: #000000;
     --fds-black-alpha-05: rgba(0, 0, 0, 0.05);

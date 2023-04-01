@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
+import logo from './logo.svg';
 import Navbar from "./components/Navbar.js";
+import NavRight from "./components/NavRight"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom"
 import Home from "./pages/Home"
@@ -8,13 +10,22 @@ import About from "./pages/About"
 import Contact from "./pages/Contact"
 import { Link } from 'react-router-dom';
 import ProfileNavLeft from "./components/ProfileNavLeft.js";
+const friends = [
+  { photo:logo, name:"Jill Moncrief" },
+  { photo:logo, name:"Jill Moncrief" },
+  { photo:logo, name:"Jill Moncrief" },
+  { photo:logo, name:"Jill Moncrief" },
+  { photo:logo, name:"Jill Moncrief" },
+  { photo:logo, name:"Jill Moncrief" }
+  ]
 
 function App() {
  return(
   <div>
     
-    <nav className='css-1 l-478 l-113'><Navbar/></nav>
-             
+    <Navbar/>
+    <NavRight items = {friends}/>
+    
     
     
   
@@ -32,6 +43,7 @@ function App() {
           <Route path="contact" element={ <Contact/> } />
       </Routes>
   </div>
+  
  )
   {/* /*const [data, setData] = React.useState(null);
 
