@@ -1,10 +1,12 @@
 import React from "react";
+import "./../components/Home.css";
+import Post from "../components/Post";
+import Register from "./Register";
 
 function Home() {
   return (
-    <div>
-      <h1>This is the home page</h1>
-      
+    <div className="home">
+      <Register></Register>
     </div>
   );
 }

@@ -1,0 +1,14 @@
+.container {
+    border-style: solid;
+    border-width: thin;
+    height: auto;
+    width: auto;
+    overflow: visible;
+    overflow-wrap: anywhere;
+    margin: auto;
+}
+
+p {
+    word-break: break-all;
+    white-space: normal;
+}

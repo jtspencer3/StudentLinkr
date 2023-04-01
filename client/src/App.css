@@ -1,67 +1,79 @@
 .App {
   text-align: center;
+  background-color: black;
+  width: 100%;
+  height: 100%;
 }
-.css-1{
-  -moz-box-align: stretch;
--moz-box-direction: normal;
--moz-box-orient: vertical;
-align-items: stretch;
-border: 0px solid black;
-box-sizing: border-box;
-display: flex;
-flex-basis: auto;
-flex-direction: column;
-flex-shrink: 0;
-margin: 0px;
-min-height: 0px;
-min-width: 0px;
-padding: 0px;
-position: relative;
-z-index: 0;
-}
-.l-101{
-  margin-top: 2px;
-}
-.l-111{
-  margin-bottom: 4px;
-}
-.l-112{
+
+.body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  background-color: aqua;
   width: 100%;
 }
-.l-113{
+.css-1 {
+  -moz-box-align: stretch;
+  -moz-box-direction: normal;
+  -moz-box-orient: vertical;
+  align-items: stretch;
+  border: 0px solid black;
+  box-sizing: border-box;
+  display: flex;
+  flex-basis: auto;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0px;
+  min-height: 0px;
+  min-width: 0px;
+  padding: 0px;
+  position: relative;
+  z-index: 0;
+}
+.l-101 {
+  margin-top: 2px;
+}
+.l-111 {
+  margin-bottom: 4px;
+}
+.l-112 {
+  width: 100%;
+}
+.l-113 {
   -moz-box-direction: normal;
   -moz-box-orient: vertical;
   flex-direction: column;
 }
-.l-478{
+.l-478 {
   -moz-box-align: start;
   align-items: flex-start;
 }
-.l-202{
+.l-202 {
   padding-left: 12px;
   padding-right: 12px;
 }
-.l-919{
+.l-919 {
   overflow-y: auto;
 }
-.l-454{
+.l-454 {
   -moz-box-pack: justify;
-justify-content: space-between
+  justify-content: space-between;
 }
-.l-123{
+.l-123 {
   width: 275px;
 }
-.l-791{
+.l-791 {
   top: 0px;
 }
-.l-717{
-  height:100%;
+.l-717 {
+  height: 100%;
 }
-.l-823{
+.l-823 {
   backface-visibility: hidden;
 }
-.l-212{
-  position:fixed;
+.l-212 {
+  position: fixed;
 }
 .App-logo {
   height: 40vmin;
@@ -237,7 +249,8 @@ justify-content: space-between
   font-weight: 700;
 }
 .r-37j5jr {
-  font-family: "TwitterChirp", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "TwitterChirp", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
 }
 .r-qvutc0 {
   overflow-wrap: break-word;
@@ -257,82 +270,86 @@ justify-content: space-between
   box-sizing: border-box;
   color: rgb(0, 0, 0);
   display: inline;
-  font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: normal;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: normal;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
   margin: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
   padding: 0px;
   white-space: pre-wrap;
-  overflow-wrap: break-word;}
-  .r-poiln3 {
-    font-family: inherit;
-  }
-  .r-qvutc0 {
-    overflow-wrap: break-word;
-  }
-  .r-bcqeeo {
-    min-width: 0px;
-  }
-  .css-16my406 {
-    color: inherit;
-    font: inherit;
-      font-family: inherit;
-    white-space: inherit;
-  }
-  .css-901oao {
-    border: 0px solid black;
-    box-sizing: border-box;
-    color: rgb(0, 0, 0);
-    display: inline;
-    font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    margin: 0px;
-    padding: 0px;
-    white-space: pre-wrap;
-    overflow-wrap: break-word;
-  }
-  .r-cnnz9e {
-    width: 1.75rem;
-  }
-  .r-18jsvk2 {
-    color: rgb(15, 20, 25);
-  }
-  .r-lwhw9o {
-    height: 1.75rem;
-  }
-  .r-lrvibr {
-    user-select: none;
-  }
-  .r-1plcrui {
-    vertical-align: text-bottom;
-  }
-  .r-bnwqim {
-    position: relative;
-  }
-  .r-dnmrzs {
-    max-width: 100%;
-  }
-  .r-yyyyoo {
-    fill: currentcolor;
-  }
-  .r-4qtqp9 {
-    display: inline-block;
-  }
-  .r-1loqt21 {
-    cursor: pointer;
-  }
-  .css-4rbku5 {
-    color: inherit;
-    font: inherit;
-    list-style: none;
-    text-align: inherit;
-  }
-  .css-18t94o4 {
-    cursor: pointer;
-  }
+  overflow-wrap: break-word;
+}
+.r-poiln3 {
+  font-family: inherit;
+}
+.r-qvutc0 {
+  overflow-wrap: break-word;
+}
+.r-bcqeeo {
+  min-width: 0px;
+}
+.css-16my406 {
+  color: inherit;
+  font: inherit;
+  font-family: inherit;
+  white-space: inherit;
+}
+.css-901oao {
+  border: 0px solid black;
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  display: inline;
+  font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+.r-cnnz9e {
+  width: 1.75rem;
+}
+.r-18jsvk2 {
+  color: rgb(15, 20, 25);
+}
+.r-lwhw9o {
+  height: 1.75rem;
+}
+.r-lrvibr {
+  user-select: none;
+}
+.r-1plcrui {
+  vertical-align: text-bottom;
+}
+.r-bnwqim {
+  position: relative;
+}
+.r-dnmrzs {
+  max-width: 100%;
+}
+.r-yyyyoo {
+  fill: currentcolor;
+}
+.r-4qtqp9 {
+  display: inline-block;
+}
+.r-1loqt21 {
+  cursor: pointer;
+}
+.css-4rbku5 {
+  color: inherit;
+  font: inherit;
+  list-style: none;
+  text-align: inherit;
+}
+.css-18t94o4 {
+  cursor: pointer;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -341,6 +358,4 @@ justify-content: space-between
   to {
     transform: rotate(360deg);
   }
-
-  
 }
