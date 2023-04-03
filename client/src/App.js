@@ -31,12 +31,15 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar/> 
       <div className="body">
-        <Routes>
+        
+        <NavRight items = {friends}/>
+        {/* <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
-        </Routes>
+        </Routes> */}
       </div>
     </div>
   );
