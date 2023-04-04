@@ -86,63 +86,6 @@ function Navbar(props) {
                     />
                 ))}
               <NavbarPages/>
-              {/* <li class="x1iyjqo2 xmlsiyf x1hxoosp x1l38jg0 x1awlv9s x1i64zmx x1gz44f">
-                <span class="x4k7w5x x1h91t0o x1h9r5lt xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j x1jfb8zj">
-                  <div class="x6s0dn4 x78zum5 x1s65kcs x1n2onr6"><div class="xtvsq51 b-trr1 b-tlr1 x1ey2m1c x177n6bx xuoj239 x10l6tqk xb1c2wi xhmqdbg x1k90msu x11xpdln x1qfuztq xxa6egd"></div>
-                    <a aria-label="Watch" class="x1i10hfl xjbqb8w b-t0 b-r0 b-b0 b-bl0 x9f619 x1ypdohk xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq b-tlri b-trri b-brri b-blri x87ps6o x1lku1pv x1a2a7pz x6s0dn4 x78zum5 xdt5ytf x5yr21d xl56j7k x1n2onr6 xh8yej3" href="/watch/?ref=tab" tabindex="0">
-                      <span class="x1n2onr6"><svg viewBox="0 0 28 28" class="x1lliihq x1k90msu x2h7rmj x1qfuztq xcza8v6" fill="currentColor" height="28" width="28">
-                        <path d="M8.75 25.25C8.336 25.25 8 24.914 8 24.5 8 24.086 8.336 23.75 8.75 23.75L19.25 23.75C19.664 23.75 20 24.086 20 24.5 20 24.914 19.664 25.25 19.25 25.25L8.75 25.25ZM17.163 12.846 12.055 15.923C11.591 16.202 11 15.869 11 15.327L11 9.172C11 8.631 11.591 8.297 12.055 8.576L17.163 11.654C17.612 11.924 17.612 12.575 17.163 12.846ZM21.75 20.25C22.992 20.25 24 19.242 24 18L24 6.5C24 5.258 22.992 4.25 21.75 4.25L6.25 4.25C5.008 4.25 4 5.258 4 6.5L4 18C4 19.242 5.008 20.25 6.25 20.25L21.75 20.25ZM21.75 21.75 6.25 21.75C4.179 21.75 2.5 20.071 2.5 18L2.5 6.5C2.5 4.429 4.179 2.75 6.25 2.75L21.75 2.75C23.821 2.75 25.5 4.429 25.5 6.5L25.5 18C25.5 20.071 23.821 21.75 21.75 21.75Z"></path>
-                      </svg>
-                        <span class="x10l6tqk x11f4b5y x1v4kod4"></span>
-                      </span>
-                      <div class="b-tlri b-trri b-brri b-blri x1ey2m1c xds687c xg01cxk x47corl x10l6tqk x17qophe x13vifvy x1ebt8du x19991ni x1dhq9h" data-visualcompletion="ignore"></div>
-                    </a>
-                  </div>
-                </span>
-              </li>
-              <li class="x1iyjqo2 xmlsiyf x1hxoosp x1l38jg0 x1awlv9s x1i64zmx x1gz44f">
-                <span class="x4k7w5x x1h91t0o x1h9r5lt xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j x1jfb8zj">
-                  <div class="x6s0dn4 x78zum5 x1s65kcs x1n2onr6"><div class="xtvsq51 b-trr1 b-tlr1 x1ey2m1c x177n6bx xuoj239 x10l6tqk xb1c2wi xhmqdbg x1k90msu x11xpdln x1qfuztq xxa6egd"></div>
-                    <a aria-label="Watch" class="x1i10hfl xjbqb8w b-t0 b-r0 b-b0 b-bl0 x9f619 x1ypdohk xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq b-tlri b-trri b-brri b-blri x87ps6o x1lku1pv x1a2a7pz x6s0dn4 x78zum5 xdt5ytf x5yr21d xl56j7k x1n2onr6 xh8yej3" href="/watch/?ref=tab" tabindex="0">
-                      <span class="x1n2onr6"><svg viewBox="0 0 28 28" class="x1lliihq x1k90msu x2h7rmj x1qfuztq xcza8v6" fill="currentColor" height="28" width="28">
-                        <path d="M8.75 25.25C8.336 25.25 8 24.914 8 24.5 8 24.086 8.336 23.75 8.75 23.75L19.25 23.75C19.664 23.75 20 24.086 20 24.5 20 24.914 19.664 25.25 19.25 25.25L8.75 25.25ZM17.163 12.846 12.055 15.923C11.591 16.202 11 15.869 11 15.327L11 9.172C11 8.631 11.591 8.297 12.055 8.576L17.163 11.654C17.612 11.924 17.612 12.575 17.163 12.846ZM21.75 20.25C22.992 20.25 24 19.242 24 18L24 6.5C24 5.258 22.992 4.25 21.75 4.25L6.25 4.25C5.008 4.25 4 5.258 4 6.5L4 18C4 19.242 5.008 20.25 6.25 20.25L21.75 20.25ZM21.75 21.75 6.25 21.75C4.179 21.75 2.5 20.071 2.5 18L2.5 6.5C2.5 4.429 4.179 2.75 6.25 2.75L21.75 2.75C23.821 2.75 25.5 4.429 25.5 6.5L25.5 18C25.5 20.071 23.821 21.75 21.75 21.75Z"></path>
-                      </svg>
-                        <span class="x10l6tqk x11f4b5y x1v4kod4"></span>
-                      </span>
-                      <div class="b-tlri b-trri b-brri b-blri x1ey2m1c xds687c xg01cxk x47corl x10l6tqk x17qophe x13vifvy x1ebt8du x19991ni x1dhq9h" data-visualcompletion="ignore"></div>
-                    </a>
-                  </div>
-                </span>
-              </li>
-              <li class="x1iyjqo2 xmlsiyf x1hxoosp x1l38jg0 x1awlv9s x1i64zmx x1gz44f">
-                <span class="x4k7w5x x1h91t0o x1h9r5lt xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j x1jfb8zj">
-                  <div class="x6s0dn4 x78zum5 x1s65kcs x1n2onr6"><div class="xtvsq51 b-trr1 b-tlr1 x1ey2m1c x177n6bx xuoj239 x10l6tqk xb1c2wi xhmqdbg x1k90msu x11xpdln x1qfuztq xxa6egd"></div>
-                    <a aria-label="Watch" class="x1i10hfl xjbqb8w b-t0 b-r0 b-b0 b-bl0 x9f619 x1ypdohk xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq b-tlri b-trri b-brri b-blri x87ps6o x1lku1pv x1a2a7pz x6s0dn4 x78zum5 xdt5ytf x5yr21d xl56j7k x1n2onr6 xh8yej3" href="/watch/?ref=tab" tabindex="0">
-                      <span class="x1n2onr6"><svg viewBox="0 0 28 28" class="x1lliihq x1k90msu x2h7rmj x1qfuztq xcza8v6" fill="currentColor" height="28" width="28">
-                        <path d="M8.75 25.25C8.336 25.25 8 24.914 8 24.5 8 24.086 8.336 23.75 8.75 23.75L19.25 23.75C19.664 23.75 20 24.086 20 24.5 20 24.914 19.664 25.25 19.25 25.25L8.75 25.25ZM17.163 12.846 12.055 15.923C11.591 16.202 11 15.869 11 15.327L11 9.172C11 8.631 11.591 8.297 12.055 8.576L17.163 11.654C17.612 11.924 17.612 12.575 17.163 12.846ZM21.75 20.25C22.992 20.25 24 19.242 24 18L24 6.5C24 5.258 22.992 4.25 21.75 4.25L6.25 4.25C5.008 4.25 4 5.258 4 6.5L4 18C4 19.242 5.008 20.25 6.25 20.25L21.75 20.25ZM21.75 21.75 6.25 21.75C4.179 21.75 2.5 20.071 2.5 18L2.5 6.5C2.5 4.429 4.179 2.75 6.25 2.75L21.75 2.75C23.821 2.75 25.5 4.429 25.5 6.5L25.5 18C25.5 20.071 23.821 21.75 21.75 21.75Z"></path>
-                      </svg>
-                        <span class="x10l6tqk x11f4b5y x1v4kod4"></span>
-                      </span>
-                      <div class="b-tlri b-trri b-brri b-blri x1ey2m1c xds687c xg01cxk x47corl x10l6tqk x17qophe x13vifvy x1ebt8du x19991ni x1dhq9h" data-visualcompletion="ignore"></div>
-                    </a>
-                  </div>
-                </span>
-              </li>
-              <li class="x1iyjqo2 xmlsiyf x1hxoosp x1l38jg0 x1awlv9s x1i64zmx x1gz44f">
-                <span class="x4k7w5x x1h91t0o x1h9r5lt xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j x1jfb8zj">
-                  <div class="x6s0dn4 x78zum5 x1s65kcs x1n2onr6"><div class="xtvsq51 b-trr1 b-tlr1 x1ey2m1c x177n6bx xuoj239 x10l6tqk xb1c2wi xhmqdbg x1k90msu x11xpdln x1qfuztq xxa6egd"></div>
-                    <a aria-label="Watch" class="x1i10hfl xjbqb8w b-t0 b-r0 b-b0 b-bl0 x9f619 x1ypdohk xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq b-tlri b-trri b-brri b-blri x87ps6o x1lku1pv x1a2a7pz x6s0dn4 x78zum5 xdt5ytf x5yr21d xl56j7k x1n2onr6 xh8yej3" href="/watch/?ref=tab" tabindex="0">
-                      <span class="x1n2onr6">
-                        <svg viewBox="0 0 28 28" class="x1lliihq x1k90msu x2h7rmj x1qfuztq xcza8v6" fill="currentColor" height="28" width="28">
-                          <path d="M8.75 25.25C8.336 25.25 8 24.914 8 24.5 8 24.086 8.336 23.75 8.75 23.75L19.25 23.75C19.664 23.75 20 24.086 20 24.5 20 24.914 19.664 25.25 19.25 25.25L8.75 25.25ZM17.163 12.846 12.055 15.923C11.591 16.202 11 15.869 11 15.327L11 9.172C11 8.631 11.591 8.297 12.055 8.576L17.163 11.654C17.612 11.924 17.612 12.575 17.163 12.846ZM21.75 20.25C22.992 20.25 24 19.242 24 18L24 6.5C24 5.258 22.992 4.25 21.75 4.25L6.25 4.25C5.008 4.25 4 5.258 4 6.5L4 18C4 19.242 5.008 20.25 6.25 20.25L21.75 20.25ZM21.75 21.75 6.25 21.75C4.179 21.75 2.5 20.071 2.5 18L2.5 6.5C2.5 4.429 4.179 2.75 6.25 2.75L21.75 2.75C23.821 2.75 25.5 4.429 25.5 6.5L25.5 18C25.5 20.071 23.821 21.75 21.75 21.75Z"></path>
-                        </svg>
-                        <span class="x10l6tqk x11f4b5y x1v4kod4"></span>
-                      </span>
-                      <div class="b-tlri b-trri b-brri b-blri x1ey2m1c xds687c xg01cxk x47corl x10l6tqk x17qophe x13vifvy x1ebt8du x19991ni x1dhq9h" data-visualcompletion="ignore"></div>
-                    </a>
-                  </div>
-                </span>
-              </li> */}
             </ul>
           </div>
         </div>
