@@ -21,7 +21,12 @@ const friends = [
   { photo: logo, name: "Jill Moncrief" },
   { photo: logo, name: "Jill Moncrief" },
 ];
-
+const pages = [
+  {name: "Home"},
+  {name: "Groups"},
+  {name: "Friends"},
+  {name: "Discover"},
+];
 function App() {
   // const [data, setData] = React.useState(null);
 
@@ -33,7 +38,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar items ={pages} />
       
             <div className="body">
               <div className="content">

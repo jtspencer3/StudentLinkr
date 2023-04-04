@@ -1,6 +1,8 @@
 import React from 'react';
 import './Nav.css';
-function Navbar() {
+import NavbarPages from './NavbarPages';
+
+function Navbar(props) {
   return (
     <div role="banner">
       <div class="x6s0dn4 x9f619 x78zum5 x1iyjqo2 x1s65kcs x1d52u69 xixxii4 x17qophe x13vifvy xzkaem6">
@@ -77,21 +79,14 @@ function Navbar() {
         <div class="x9f619 x1n2onr6 x1ja2u2z x78zum5 xdt5ytf x13a6bvl">
           <div aria-label="Studentlinkr" class="x78zum5 x1s65kcs xl56j7k" role="navigation">
             <ul class="xuk3077 x78zum5 x1iyjqo2 xl56j7k x1p8ty84 x1na7pl x88anuq xs82sitw">
-              <li class="x1iyjqo2 xmlsiyf x1hxoosp x1l38jg0 x1awlv9s x1gz44f">
-                <span class="x4k7w5x x1h91t0o x1h9r5lt xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j x1jfb8zj"><div class="x6s0dn4 x78zum5 x1s65kcs x1n2onr6">
-                  <div class="xtvsq51 b-trr1 b-tlr1 x1ey2m1c x177n6bx xuoj239 x10l6tqk xb1c2wi xhmqdbg x1k90msu x11xpdln x1qfuztq x1c071of"></div>
-                  <a aria-current="page" aria-label="Home" class="x1i10hfl xjbqb8w b-t0 b-r0 b-b0 b-bl0 x9f619 x1ypdohk xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq b-tlri b-trri b-brri b-blri x87ps6o x1lku1pv x1a2a7pz x6s0dn4 x78zum5 xdt5ytf x5yr21d xl56j7k x1n2onr6 xh8yej3" href="/" tabindex="0">
-                    <span class="x1n2onr6"><svg viewBox="0 0 28 28" class="x1lliihq x1k90msu x2h7rmj x1qfuztq x5e5rjt" fill="currentColor" height="28" width="28">
-                      <path d="M25.825 12.29C25.824 12.289 25.823 12.288 25.821 12.286L15.027 2.937C14.752 2.675 14.392 2.527 13.989 2.521 13.608 2.527 13.248 2.675 13.001 2.912L2.175 12.29C1.756 12.658 1.629 13.245 1.868 13.759 2.079 14.215 2.567 14.479 3.069 14.479L5 14.479 5 23.729C5 24.695 5.784 25.479 6.75 25.479L11 25.479C11.552 25.479 12 25.031 12 24.479L12 18.309C12 18.126 12.148 17.979 12.33 17.979L15.67 17.979C15.852 17.979 16 18.126 16 18.309L16 24.479C16 25.031 16.448 25.479 17 25.479L21.25 25.479C22.217 25.479 23 24.695 23 23.729L23 14.479 24.931 14.479C25.433 14.479 25.921 14.215 26.132 13.759 26.371 13.245 26.244 12.658 25.825 12.29">
-                      </path>
-                    </svg>
-                      <span class="x10l6tqk x11f4b5y x1v4kod4"></span>
-                    </span>
-                  </a>
-                </div>
-                </span>
-              </li>
-              <li class="x1iyjqo2 xmlsiyf x1hxoosp x1l38jg0 x1awlv9s x1i64zmx x1gz44f">
+            {props.items.map((pages, inx) => (
+                    <NavbarPages
+                        name={pages.name}
+                        key={inx}
+                    />
+                ))}
+              <NavbarPages/>
+              {/* <li class="x1iyjqo2 xmlsiyf x1hxoosp x1l38jg0 x1awlv9s x1i64zmx x1gz44f">
                 <span class="x4k7w5x x1h91t0o x1h9r5lt xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j x1jfb8zj">
                   <div class="x6s0dn4 x78zum5 x1s65kcs x1n2onr6"><div class="xtvsq51 b-trr1 b-tlr1 x1ey2m1c x177n6bx xuoj239 x10l6tqk xb1c2wi xhmqdbg x1k90msu x11xpdln x1qfuztq xxa6egd"></div>
                     <a aria-label="Watch" class="x1i10hfl xjbqb8w b-t0 b-r0 b-b0 b-bl0 x9f619 x1ypdohk xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq b-tlri b-trri b-brri b-blri x87ps6o x1lku1pv x1a2a7pz x6s0dn4 x78zum5 xdt5ytf x5yr21d xl56j7k x1n2onr6 xh8yej3" href="/watch/?ref=tab" tabindex="0">
@@ -147,7 +142,7 @@ function Navbar() {
                     </a>
                   </div>
                 </span>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
