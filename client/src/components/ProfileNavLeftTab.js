@@ -1,7 +1,7 @@
 import React from 'react';
-import './NavRight.css'
+import './NavRight.css';
 
-function ProfileNavLeftTab(props){
+function ProfileNavLeftTab(props) {
    return(
    <li>
             <div className='list-item'>
