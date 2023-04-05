@@ -16,6 +16,13 @@ app.use(cors());
 // We can use dotenv and an .env file to store our database info privately
 // That .env file needs to be added to the git ignore and never pushed to github
 
+const db = mysql.createConnection({
+  user: "test",
+  host: "143.244.171.250",
+  password: "test",
+  database: "StudentLinkr",
+});
+
 // Testing connection with React
 app.get("/api", (req, res) => {
   res.json({ message: "Hello from Express!" });
@@ -23,14 +30,36 @@ app.get("/api", (req, res) => {
 const message = "Success";
 
 app.post("/register", (req, res) => {
-  const name = req.body.name;
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
   const email = req.body.email;
   const username = req.body.username;
+  const graduationYear = req.body.graduationYear;
   const password = req.body.password;
+
+  db.query(
+    "INSERT INTO users (first_name, last_name, user_email, username, password, academic_year) VALUES (?,?,?,?,?,?)",
+    [firstName, lastName, email, username, password, graduationYear],
+    (err, result) => {
+      console.log(err);
+    }
+  );
 
   res.send("Success");
 
   // SQL statement to insert new user into database
+
+  res.redirect("/login");
+});
+
+app.post("/login", (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  // db.query();
+
+  // After logging in, redirect to home page
+  res.redirect("/");
 });
 
 // Server Setup
