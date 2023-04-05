@@ -20,13 +20,34 @@ const friends = [
   { photo: logo, name: "Jill Moncrief" },
   { photo: logo, name: "Jill Moncrief" },
   { photo: logo, name: "Jill Moncrief" },
+  { photo: logo, name: "Jill Moncrief" },
+  { photo: logo, name: "Jill Moncrief" },
+  { photo: logo, name: "Jill Moncrief" },
+  { photo: logo, name: "Jill Moncrief" },
+  { photo: logo, name: "Jill Moncrief" },
+  { photo: logo, name: "Jill Moncrief" },
+  { photo: logo, name: "Jill Moncrief" },
 ];
 const pages = [
-  {name: "Home"},
-  {name: "Groups"},
-  {name: "Friends"},
-  {name: "Discover"}
+  {name: "Home", link:"/"},
+  {name: "Groups", link:"/About"},
+  {name: "Friends", link:"/Contact"},
+  {name: "Discover", link:"/"}
 ];
+const  pagesLeft = [
+  {photo:logo, name:"Tanner Renick", link:"/"},
+  {photo:logo, name:"Groups", link:"/About"},
+  {photo:logo, name:"Events", link:"/About"},
+  {photo:logo, name:"Settings", link:"/About"},
+  {photo:logo, name:"Tanner Renick", link:"/"},
+  {photo:logo, name:"Groups", link:"/About"},
+  {photo:logo, name:"Events", link:"/About"},
+  {photo:logo, name:"Settings", link:"/About"},
+  {photo:logo, name:"Tanner Renick", link:"/"},
+  {photo:logo, name:"Groups", link:"/About"},
+  {photo:logo, name:"Events", link:"/About"},
+  {photo:logo, name:"Settings", link:"/About"},
+]
 const posts = [
   {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
   {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
@@ -58,7 +79,7 @@ function App() {
       <Navbar items ={pages} />
             <div className="body">
               <div className="content">
-                <ProfileNavLeft items ={friends}/>
+                <ProfileNavLeft items ={pagesLeft}/>
                      <Routes>
           <Route path="/" element={<Home items ={posts} />} />
           <Route path="about" element={<About />} />

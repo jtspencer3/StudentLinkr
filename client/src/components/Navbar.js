@@ -82,6 +82,7 @@ function Navbar(props) {
             {props.items.map((pages, inx) => (
                     <NavbarPages
                         name={pages.name}
+                        link={pages.link}
                         key={inx}
                     />
                 ))}

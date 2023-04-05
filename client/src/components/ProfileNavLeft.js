@@ -1,18 +1,27 @@
 import React from 'react';
-import './NavRight.css';
+import './ProfileNavLeft.css';
 import ProfileNavLeftTab from "./ProfileNavLeftTab";
 function ProfileNavLeft(props) {
-    return(
-     <div>
-       <ul>
-                {props.items.map((friends, inx) => (
-                    <ProfileNavLeftTab
-                        photo={friends.photo}
-                        name={friends.name}
-                        key={inx}
-                    />
-                ))}
+  return (
+
+    <div className='list-left-page-item'>
+      <div className='list-left-container'>
+        <div className='list-left-container-item'>
+          <div>
+            <ul className='list-left'>
+              {props.items.map((pagesLeft, inx) => (
+                <ProfileNavLeftTab
+                  photo={pagesLeft.photo}
+                  name={pagesLeft.name}
+                  link={pagesLeft.link}
+                  key={inx}
+                />
+              ))}
             </ul>
-       </div>
-    )}
-    export default ProfileNavLeft;
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+export default ProfileNavLeft;
