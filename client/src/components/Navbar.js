@@ -85,7 +85,7 @@ function Navbar(props) {
                         key={inx}
                     />
                 ))}
-              <NavbarPages/>
+            
             </ul>
           </div>
         </div>

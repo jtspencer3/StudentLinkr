@@ -25,7 +25,7 @@ const pages = [
   {name: "Home"},
   {name: "Groups"},
   {name: "Friends"},
-  {name: "Discover"},
+  {name: "Discover"}
 ];
 function App() {
   // const [data, setData] = React.useState(null);

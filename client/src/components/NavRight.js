@@ -1,5 +1,5 @@
 import React from 'react';
-import './NavRight.css'
+import './NavRight.css' ;
 import NavRightProfile from './NavRightProfile.js'
 
 function NavRight(props) {
