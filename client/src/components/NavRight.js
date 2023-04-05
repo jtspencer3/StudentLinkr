@@ -4,9 +4,9 @@ import NavRightProfile from './NavRightProfile.js'
 
 function NavRight(props) {
     return (
-        <div className='list-left-page-item'>
-            <div className='list-left-container'>
-                <div className='list-left-container-item'>
+        <div className='list-right-page-item'>
+            <div className='list-right-container'>
+                <div className='list-right-container-item'>
                     <div>
                         <ul>
                             {props.items.map((friends, inx) => (

@@ -8,8 +8,9 @@
     perspective-origin: right top;
     perspective: 1px;
     flex-shrink: 1;
-    min-height: 380px;
+    min-height: 674px;
     contain: strict;
+    background-color: black;
 }
 .list-right-container{
     display: flex;
@@ -17,8 +18,9 @@
     position: relative;
     max-height: 0px;
     box-sizing: border-box;
-    min-height: 380px;
+    min-height: inherit;
     z-index: 0;
+    flex-grow: 1;
 }
 
 .list-right-container-item {
