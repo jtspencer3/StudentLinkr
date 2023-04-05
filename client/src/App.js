@@ -27,6 +27,23 @@ const pages = [
   {name: "Friends"},
   {name: "Discover"}
 ];
+const posts = [
+  {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
+  {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
+  {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
+  {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
+  {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
+  {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
+  {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
+  {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
+  {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
+  {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
+  {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
+  {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
+  {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
+  {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
+  {name: "ZACH BODMER", dateTime:"DATETIME", post:"This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider."},
+]
 function App() {
   // const [data, setData] = React.useState(null);
 
@@ -39,16 +56,14 @@ function App() {
   return (
     <div className="App">
       <Navbar items ={pages} />
-      
             <div className="body">
               <div className="content">
-                    <NavRight items={friends} />
-                    {/* <Routes>
-          <Route path="/" element={<Home />} />
+                     <Routes>
+          <Route path="/" element={<Home items ={posts} />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
-        </Routes> */}
-                
+        </Routes> 
+        <NavRight items={friends} />
          </div>
        </div>
      </div>
