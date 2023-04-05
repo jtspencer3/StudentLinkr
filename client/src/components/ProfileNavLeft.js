@@ -1,6 +1,7 @@
 import React from 'react';
-import './NavRight.css'
-function ProfileNavLeft() {
+import './NavRight.css';
+import ProfileNavLeftTab from "./ProfileNavLeftTab";
+function ProfileNavLeft(props) {
     return(
      <div>
        <ul>

@@ -58,6 +58,7 @@ function App() {
       <Navbar items ={pages} />
             <div className="body">
               <div className="content">
+                <ProfileNavLeft items ={friends}/>
                      <Routes>
           <Route path="/" element={<Home items ={posts} />} />
           <Route path="about" element={<About />} />

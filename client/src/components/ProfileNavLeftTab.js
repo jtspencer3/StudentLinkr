@@ -15,3 +15,5 @@ function ProfileNavLeftTab(props){
         </li>
    );
 }
+
+export default ProfileNavLeftTab;
