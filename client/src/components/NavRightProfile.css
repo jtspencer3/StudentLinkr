@@ -17,6 +17,10 @@
     flex-direction: column;
     position: relative;
     display: inline-block;
+    
+}
+.list-item-photo-image{
+    border-radius: 50%;
 }
 .list-item-name {
     justify-content: space-between;

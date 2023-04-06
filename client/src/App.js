@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import "./components/Nav.css";
 import logo from "./logo.svg";
+import zach from "./Zach.jpg";
 import Navbar from "./components/Navbar.js";
 import NavRight from "./components/NavRight";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,7 +16,7 @@ import { Link } from "react-router-dom";
 import ProfileNavLeft from "./components/ProfileNavLeft.js";
 
 const friends = [
-  { photo: logo, name: "Jill Moncrief" },
+  { photo: zach, name: "Jill Moncrief" },
   { photo: logo, name: "Jill Moncrief" },
   { photo: logo, name: "Jill Moncrief" },
   { photo: logo, name: "Jill Moncrief" },

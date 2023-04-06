@@ -7,7 +7,7 @@ function NavRightProfile(props) {
             <a>
                 <div className='list-item'>
                     <div className='list-item-photo'>
-                        <img style={{ height: '36px', width: '36px' }} src={props.photo}></img>
+                        <img className='list-item-photo-image' style={{ height: '36px', width: '36px', }} src={props.photo}></img>
                     </div>
                     <div className='list-item-name'>
                         {props.name}
