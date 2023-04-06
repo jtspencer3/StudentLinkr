@@ -1,4 +1,4 @@
-.list-right-page-item {
+.list-left-page-item {
     flex-basis: 360px;
     max-width: 360px;
     overflow-y: hidden;
@@ -8,22 +8,20 @@
     perspective-origin: right top;
     perspective: 1px;
     flex-shrink: 1;
-    min-height: 674px;
+    min-height: 380px;
     contain: strict;
-    color: #F1B82D;
 }
-.list-right-container{
+.list-left-container{
     display: flex;
     flex-direction: column;
     position: relative;
     max-height: 0px;
     box-sizing: border-box;
-    min-height: inherit;
+    min-height: 380px;
     z-index: 0;
-    flex-grow: 1;
 }
 
-.list-right-container-item {
+.list-left-container-item {
     flex-basis: 100%;
     max-width: 360px;
     overflow-y: auto;
@@ -43,4 +41,8 @@
     will-change: transform, scroll-position;
     perspective: 1px;
     
+}
+.list-left{
+    padding-left: 0;
+    font-size: 24px;
 }
