@@ -3,6 +3,10 @@ import "./App.css";
 import "./components/Nav.css";
 import logo from "./logo.svg";
 import zach from "./Zach.jpg";
+import freindsIcon from "./FreindsIcon.svg";
+import errorIcon from "./erroricon.svg";
+import logoutIcon from "./logouticon.svg";
+import settingsIcon from "./settingsicon.svg";
 import Navbar from "./components/Navbar.js";
 import NavRight from "./components/NavRight";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -67,18 +71,12 @@ const pages = [
 ];
 const pagesLeft = [
   { photo: logo, name: "Tanner Renick", link: "/" },
-  { photo: logo, name: "Friends", link: "/About" },
-  { photo: logo, name: "Settings", link: "/About" },
-  { photo: logo, name: "Report A Bug", link: "/About" },
-  { photo: logo, name: "Logout", link: "/" },
-  // {photo:logo, name:"Groups", link:"/About"},
-  // {photo:logo, name:"Events", link:"/About"},
-  // {photo:logo, name:"Settings", link:"/About"},
-  // {photo:logo, name:"Tanner Renick", link:"/"},
-  // {photo:logo, name:"Groups", link:"/About"},
-  // {photo:logo, name:"Events", link:"/About"},
-  // {photo:logo, name:"Settings", link:"/About"},
+  { photo: freindsIcon, name: "Friends", link: "/About" },
+  { photo: settingsIcon, name: "Settings", link: "/About" },
+  { photo: errorIcon, name: "Report A Bug", link: "/About" },
+  { photo: logoutIcon, name: "Logout", link: "/" },
 ];
+
 const posts = [
   {
     name: "ZACH BODMER",
@@ -170,7 +168,7 @@ function App() {
       <Navbar items={pages} />
       <div className="body">
         <div className="content">
-          <ProfileNavLeft items={friends} />
+          <ProfileNavLeft items={pagesLeft} />
           <Routes>
             <Route path="/" element={<Home items={posts} />} />
             <Route path="about" element={<About />} />
