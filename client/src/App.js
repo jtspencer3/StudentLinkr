@@ -3,7 +3,7 @@ import "./App.css";
 import "./components/Nav.css";
 import logo from "./logo.svg";
 import zach from "./Zach.jpg";
-import freindsIcon from "./FreindsIcon.svg";
+import groupsIcon from "./GroupsIcon.svg";
 import errorIcon from "./erroricon.svg";
 import logoutIcon from "./logouticon.svg";
 import settingsIcon from "./settingsicon.svg";
@@ -71,7 +71,7 @@ const pages = [
 ];
 const pagesLeft = [
   { photo: logo, name: "Tanner Renick", link: "/" },
-  { photo: freindsIcon, name: "Friends", link: "/About" },
+  { photo: groupsIcon, name: "Groups", link: "/About" },
   { photo: settingsIcon, name: "Settings", link: "/About" },
   { photo: errorIcon, name: "Report A Bug", link: "/About" },
   { photo: logoutIcon, name: "Logout", link: "/" },
