@@ -1,4 +1,5 @@
-.registration {
+.registration,
+.login {
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
@@ -8,7 +9,7 @@
 }
 
 label {
-  padding: 5px;
+  padding: 10px;
 }
 
 .error {

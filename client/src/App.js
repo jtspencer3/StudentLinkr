@@ -12,10 +12,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
+import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import { Link } from "react-router-dom";
 import ProfileNavLeft from "./components/ProfileNavLeft.js";
 
 const friends = [
@@ -66,7 +65,7 @@ const pages = [
   { name: "Home", link: "/" },
   { name: "Groups", link: "/About" },
   { name: "Discover", link: "/" },
-  { name: "Events", link: "/Contact" },
+  { name: "Events", link: "/Profile" },
 ];
 const pagesLeft = [
   { photo: logo, name: "Tanner Renick", link: "/" },
@@ -171,7 +170,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home items={posts} />} />
             <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
+            <Route path="profile" element={<Profile />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
           </Routes>

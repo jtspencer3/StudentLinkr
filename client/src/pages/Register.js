@@ -84,7 +84,7 @@ function Register() {
       <br />
       <label>
         Graduation Year:
-        <input type="number" ref={graduationYearRef} />
+        <input type="text" ref={graduationYearRef} />
       </label>
       <br />
       <label>

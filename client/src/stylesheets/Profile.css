@@ -1,0 +1,25 @@
+img {
+  border-radius: 50%;
+  width: 20%;
+  height: auto;
+}
+
+.profile-container {
+  text-align: center;
+  width: 100%;
+}
+
+.profile-pic {
+  margin: auto;
+  padding: 15px 0;
+}
+
+.bio {
+  width: 75%;
+  padding: 15px 0;
+  margin: auto;
+}
+
+.year {
+  padding: 15px 0;
+}

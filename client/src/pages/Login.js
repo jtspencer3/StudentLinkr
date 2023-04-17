@@ -3,6 +3,7 @@ import Axios from "axios";
 import bcrypt from "bcryptjs";
 import "./../components/Register.css";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
@@ -27,6 +28,7 @@ function Login() {
       password: hashedPassword,
     }).then((response) => {
       if (response.data.message === "Success") {
+        console.log(response.data.result);
         navigate(response.data.redirect);
       } else {
         setVisible(true);
@@ -51,7 +53,12 @@ function Login() {
         Login
       </button>
       <br />
-      {isVisible ? <p className="error">Email/password is incorrect</p> : null}
+      <Link to="/register" className="register-link">
+        Don't have an account?
+      </Link>
+      {isVisible ? (
+        <p className="error">Username/password is incorrect</p>
+      ) : null}
       {formsNotFilled ? (
         <p className="error">Please fill out all fields</p>
       ) : null}
