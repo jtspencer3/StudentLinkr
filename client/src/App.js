@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import "./components/Nav.css";
 import logo from "./logo.svg";
 import zach from "./Zach.jpg";
 import freindsIcon from "./FreindsIcon.svg";

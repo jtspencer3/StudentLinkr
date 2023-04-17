@@ -20,7 +20,11 @@
         text-decoration: none;
         cursor: pointer;      
         height: 100%;      
-        width: 100%;           
+        width: 100%;   
+        color: #F1B82D;        
+}
+.navbar-page-link:hover{
+        color: #FBD986;
 }
 .navbar-page-label{
     position: relative;
