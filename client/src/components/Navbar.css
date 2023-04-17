@@ -80,14 +80,6 @@
         border-bottom-left-radius: inherit;
         border-top-right-radius: inherit;
 }
-
-/* .logo-svg {
-        transition-timing-function: var(--fds-soft);
-        display: block;
-        transition-property: color, fill, stroke;
-        transition-duration: var(--fds-fast);
-} */
-
 .logo-svg-fill {
         fill: #f9f8f6;
 }
