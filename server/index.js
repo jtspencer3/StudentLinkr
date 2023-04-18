@@ -79,20 +79,30 @@ app.post("/login", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
-  db.query(
-    "SELECT * FROM users WHERE username = ? AND password = ?",
-    [username, password],
-    (err, result) => {
-      if (err) {
-        console.log(err);
 
-        if (result) {
-          console.log(result);
-          res.send({ message: "Success", redirect: "/", profile: result });
-        }
-      }
-    }
-  );
+  pool.query('SELECT * FROM users WHERE username = ? AND password = ?', [username, password])
+  .then(([rows, fields]) => {
+    console.log(rows);
+    res.send({ message: "Success", redirect: "/", profile: rows });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+  // db.query(
+  //   "SELECT * FROM users WHERE username = ? AND password = ?",
+  //   [username, password],
+  //   (err, result) => {
+  //     if (err) {
+  //       console.log(err);
+
+  //       if (result) {
+  //         console.log(result);
+  //         res.send({ message: "Success", redirect: "/", profile: result });
+  //       }
+  //     }
+  //   }
+  // );
 
   // if (password === "pass" && username === "user") {
   //   return res.redirect("/about");
