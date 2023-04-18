@@ -16,13 +16,14 @@ app.use(cors());
 // We can use dotenv and an .env file to store our database info privately
 // That .env file needs to be added to the git ignore and never pushed to github
 
-const db = mysql.createPool({
+const db = require('./../client/src/util/database.js');
+/*= mysql.createPool({
   user: "test",
   host: "143.244.171.250",
   port: "3306",
   password: "password",
   database: "StudentLinkr",
-});
+});*/
 
 //db.getConnection();
 // Testing connection with React
@@ -38,24 +39,37 @@ app.post("/register", (req, res) => {
   const graduationYear = req.body.graduationYear;
   const password = req.body.password;
 
+  const newUser = {
+    first_name: firstName,
+    last_name: lastName,
+    user_email: email,
+    username: username,
+    password: password,
+    academic_year: graduationYear,
+  };
+
   // SQL statement to insert new user into database
 
-  db.query(
-    "INSERT INTO users (first_name, last_name, user_email, username, password, academic_year) VALUES (?,?,?,?,?,?)",
-    [firstName, lastName, email, username, password, graduationYear],
-    (err, result) => {
-      if (!err) {
-        console.log(result);
-        res.send({ message: "Success", redirect: "/login" });
-      }
-      console.log(err);
-    }
-  );
+  db.query('INSERT INTO users SET ?', newUser)
+  .then((result) => {
+    console.log('Inserted ${result.affectedRows} rows(s)');
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
-  db.query("SELECT * FROM users", (err, rows) => {
-    if (!err) {
-      console.log(rows);
-    }
+  // db.query("SELECT * FROM users", (err, rows) => {
+  //   if (!err) {
+  //     console.log(rows);
+  //   }
+  // });
+
+  db.query('SELECT * FROM users')
+  .then(([rows, fields]) => {
+    console.log(rows);
+  })
+  .catch(err => {
+    console.log(err);
   });
 
   // res.send({ message: "Success", redirect: "/login" });
