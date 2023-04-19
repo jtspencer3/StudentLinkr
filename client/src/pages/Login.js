@@ -17,11 +17,12 @@ function Login() {
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
 
-    const hashedPassword = bcrypt.hashSync(password, 10);
     if (username.trim().length === 0 || password.trim().length === 0) {
       setFormsNotFilled(true);
       return;
     }
+
+    const hashedPassword = bcrypt.hashSync(password, 10);
 
     Axios.post("http://localhost:3001/login", {
       username: username,
