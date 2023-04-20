@@ -18,6 +18,8 @@ function Register() {
   const [isVisible, setVisible] = useState(false);
   const [formsNotFilled, setFormsNotFilled] = useState(false);
 
+  Axios.defaults.withCredentials = true; //send info to front end to backend to see session is there
+  
   const register = () => {
     const firstName = firstNameRef.current.value;
     const lastName = lastNameRef.current.value;
@@ -110,3 +112,4 @@ function Register() {
 }
 
 export default Register;
+

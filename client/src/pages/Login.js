@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Axios from "axios";
 import bcrypt from "bcryptjs";
 import "./../components/Register.css";
@@ -13,16 +13,19 @@ function Login() {
   const [isVisible, setVisible] = useState(false);
   const [formsNotFilled, setFormsNotFilled] = useState(false);
 
+  const [loginStatus, setLoginStatus] = useState("");
+
+  Axios.defaults.withCredentials = true; //send info to front end to backend to see session is there
+
   const login = () => {
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
 
+    const hashedPassword = bcrypt.hashSync(password, 10);
     if (username.trim().length === 0 || password.trim().length === 0) {
       setFormsNotFilled(true);
       return;
     }
-
-    const hashedPassword = bcrypt.hashSync(password, 10);
 
     Axios.post("http://localhost:3001/login", {
       username: username,
@@ -33,9 +36,18 @@ function Login() {
         navigate(response.data.redirect);
       } else {
         setVisible(true);
+        console.log(response.data.message);
       }
     });
   };
+
+  useEffect(()=> {                //Knows if you are logged in or not
+    Axios.get("http://localhost:3001/login").then((response) => {
+      if(response.data.loggedIn == true){
+        setLoginStatus(response.data.user[0].username);
+      }
+    })
+  }, [])
 
   return (
     <div className="login">
