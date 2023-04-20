@@ -101,23 +101,28 @@ app.post("/login", (req, res) => {
     .then((result) => {
       console.log(login.password, " from react\n");
       console.log(password, " from MySQL");
-      // if (result.length > 0) {
-      //   bcrypt.compare(login.password, result[0].password, (error, response) => {
-      //     if(response) {
-      //       req.session.user = result; //cookie always have user ID
-      //       console.log(req.session.user);
-      //       res.send({ message: "Success", redirect: "/", profile: result });
-      //     }else{
-      //       res.send({message : "Wrong username/password combination!"});
-      //     }
-      //   });
-      // } else{
-      //   res.send({ message: "User doesn't exist"});
-      //   }
+      if (result.length > 0) {
+        if (result[0].password === login.password) {
+          req.session.user = result; //cookie always have user ID
+          console.log(req.session.user);
+          res.send({ message: "Success", redirect: "/", profile: result });
+        } else {
+          res.send({ message: "Wrong username/password combination!" });
+        }
+      } else {
+        res.send({ message: "User doesn't exist" });
+      }
     })
     .catch((err) => {
       console.log(err);
     });
+  // bcrypt.compare(login.password, result[0].password, (error, response) => {
+  //   if(response) {
+
+  //   }else{
+  //     res.send({message : "Wrong username/password combination!"});
+  //   }
+  //});
 });
 
 // Server Setup
