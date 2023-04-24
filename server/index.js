@@ -3,10 +3,13 @@ const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
 const saltRounds = 10;
+const bcrypt = require("bcrypt")
 //cookies
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+
+const json = require('jsonify');
 
 // Port Number
 const PORT = process.env.PORT || 3001;
@@ -91,24 +94,35 @@ app.post("/register", (req, res) => {
 
 app.post("/login", (req, res) => {
   const username = req.body.username;
-  const password = req.body.password;
+  const pass = req.body.password;
 
   const login = {
     username: username,
-    password: password,
+    pass: pass,
   };
-  db.query("SELECT * FROM users WHERE username = ?", login.username)
+  db.query("SELECT password FROM users WHERE username = ?", login.username)
     .then((result) => {
-      console.log(login.password, " from react\n");
-      console.log(password, " from MySQL");
+      var passResult = JSON.stringify(result[0]);
+      var passJson = JSON.parse(passResult);
+      console.log(login.pass, " from react\n");
+      console.log(passJson[0].password, " from MySQL");
       if (result.length > 0) {
-        if (result[0].password === login.password) {
-          req.session.user = result; //cookie always have user ID
-          console.log(req.session.user);
-          res.send({ message: "Success", redirect: "/", profile: result });
-        } else {
-          res.send({ message: "Wrong username/password combination!" });
-        }
+        bcrypt.compare(login.pass, passJson[0].password, (error, response) => {
+          if (response) {
+            req.session.user = result; //cookie always have user ID
+            console.log(req.session.user);
+            res.send({ message: "Success", redirect: "/", profile: result });
+          } else {
+            res.send({ message: "Wrong username/password combination!" });
+          }
+        });
+        //   bcrypt.compare(login.password, result[0].password, (error, response) => {
+        //   req.session.user = result; //cookie always have user ID
+        //   //console.log(req.session.user);
+        //   res.send({ message: "Success", redirect: "/", profile: result });
+        //   } else {
+        //   res.send({ message: "Wrong username/password combination!" });
+        // }
       } else {
         res.send({ message: "User doesn't exist" });
       }
@@ -118,7 +132,9 @@ app.post("/login", (req, res) => {
     });
   // bcrypt.compare(login.password, result[0].password, (error, response) => {
   //   if(response) {
-
+  //req.session.user = result; //cookie always have user ID
+  //console.log(req.session.user);
+  //res.send({ message: "Success", redirect: "/", profile: result });
   //   }else{
   //     res.send({message : "Wrong username/password combination!"});
   //   }
