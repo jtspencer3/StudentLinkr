@@ -21,7 +21,7 @@ function Login() {
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
 
-    const hashedPassword = bcrypt.hashSync(password, 10);
+    //const hashedPassword = bcrypt.hashSync(password, 10);
     if (username.trim().length === 0 || password.trim().length === 0) {
       setFormsNotFilled(true);
       return;
@@ -29,7 +29,7 @@ function Login() {
 
     Axios.post("http://localhost:3001/login", {
       username: username,
-      password: hashedPassword,
+      password: password,
     }).then((response) => {
       if (response.data.message === "Success") {
         console.log(response.data.result);
