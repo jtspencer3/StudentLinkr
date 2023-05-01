@@ -3,13 +3,13 @@ const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
 const saltRounds = 10;
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
 //cookies
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 
-const json = require('jsonify');
+const json = require("jsonify");
 
 // Port Number
 const PORT = process.env.PORT || 3001;
@@ -39,9 +39,6 @@ app.use(
     },
   })
 );
-// Database connection goes here
-// We can use dotenv and an .env file to store our database info privately
-// That .env file needs to be added to the git ignore and never pushed to github
 
 const db = require("./../client/src/util/database.js");
 
@@ -53,15 +50,6 @@ app.post("/register", (req, res) => {
   const graduationYear = req.body.graduationYear;
   const password = req.body.password;
 
-  app.get("/login", (req, res) => {
-    //checks if user logged in
-    if (req.session.user) {
-      res.send({ loggedIn: true, user: req.session.user });
-    } else {
-      res.send({ loggedIn: false });
-    }
-  });
-
   const newUser = {
     first_name: firstName,
     last_name: lastName,
@@ -70,8 +58,6 @@ app.post("/register", (req, res) => {
     password: password,
     academic_year: graduationYear,
   };
-
-  // SQL statement to insert new user into database
 
   db.query("INSERT INTO users SET ?", newUser)
     .then((result) => {
@@ -82,14 +68,6 @@ app.post("/register", (req, res) => {
     .catch((err) => {
       console.log(err);
     });
-
-  // db.query('SELECT * FROM users')
-  // .then(([rows, fields]) => {
-  //   console.log(rows);
-  // })
-  // .catch(err => {
-  //   console.log(err);
-  // });
 });
 
 app.post("/login", (req, res) => {
@@ -100,29 +78,24 @@ app.post("/login", (req, res) => {
     username: username,
     pass: pass,
   };
-  db.query("SELECT password FROM users WHERE username = ?", login.username)
+  db.query("SELECT * FROM users WHERE username = ?", login.username)
     .then((result) => {
       var passResult = JSON.stringify(result[0]);
       var passJson = JSON.parse(passResult);
-      console.log(login.pass, " from react\n");
-      console.log(passJson[0].password, " from MySQL");
       if (result.length > 0) {
         bcrypt.compare(login.pass, passJson[0].password, (error, response) => {
           if (response) {
-            req.session.user = result; //cookie always have user ID
-            console.log(req.session.user);
-            res.send({ message: "Success", redirect: "/", profile: result });
+            req.session.user = passJson[0].user_id; //cookie always have user ID
+            req.session.loggedIn = true;
+            res.send({
+              message: "Success",
+              redirect: "/",
+              userID: req.session.user,
+            });
           } else {
             res.send({ message: "Wrong username/password combination!" });
           }
         });
-        //   bcrypt.compare(login.password, result[0].password, (error, response) => {
-        //   req.session.user = result; //cookie always have user ID
-        //   //console.log(req.session.user);
-        //   res.send({ message: "Success", redirect: "/", profile: result });
-        //   } else {
-        //   res.send({ message: "Wrong username/password combination!" });
-        // }
       } else {
         res.send({ message: "User doesn't exist" });
       }
@@ -130,15 +103,22 @@ app.post("/login", (req, res) => {
     .catch((err) => {
       console.log(err);
     });
-  // bcrypt.compare(login.password, result[0].password, (error, response) => {
-  //   if(response) {
-  //req.session.user = result; //cookie always have user ID
-  //console.log(req.session.user);
-  //res.send({ message: "Success", redirect: "/", profile: result });
-  //   }else{
-  //     res.send({message : "Wrong username/password combination!"});
-  //   }
-  //});
+});
+
+app.get("/logout", (req, res) => {
+  if (req.session.loggedIn == true) {
+    req.session.loggedIn = false;
+    res.send({ message: req.session.loggedIn, redirect: "/login" });
+  }
+});
+
+app.post("/checkSession", (req, res) => {
+  if (
+    req.session.loggedIn == false ||
+    typeof req.session.loggedIn === "undefined"
+  ) {
+    res.send({ message: "loggedOut", redirect: "/login" });
+  }
 });
 
 // Server Setup

@@ -16,6 +16,7 @@ import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import ProfileNavLeft from "./components/ProfileNavLeft.js";
+import Logout from "./pages/Logout";
 
 const friends = [
   { photo: zach, name: "Jill Moncrief" },
@@ -72,7 +73,7 @@ const pagesLeft = [
   { photo: groupsIcon, name: "Groups", link: "/About" },
   { photo: settingsIcon, name: "Settings", link: "/About" },
   { photo: errorIcon, name: "Report A Bug", link: "/About" },
-  { photo: logoutIcon, name: "Logout", link: "/" },
+  { photo: logoutIcon, name: "Logout", link: "/logout" },
 ];
 
 const posts = [
@@ -173,6 +174,7 @@ function App() {
             <Route path="profile" element={<Profile />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
+            <Route path="logout" element={<Logout />} />
           </Routes>
           <NavRight items={friends} />
         </div>
