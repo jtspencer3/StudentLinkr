@@ -113,15 +113,15 @@ function Home() {
       if (response.data.message === "loggedOut") {
         navigate(response.data.redirect);
       }
-      else{
-        loadHome();
-      }
+      // else{
+        
+      // }
     });
- 
+    loadHome();
   }, []);
 
   return (
-    <div className="home">
+    <div onLoad={loadHome} className="home">
 
       <Feed onLoad={loadHome} items={postArray} />
       {/* <Feed items={posts}/> */}
