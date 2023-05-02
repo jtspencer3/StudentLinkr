@@ -9,6 +9,9 @@ function NavRight(props) {
                 <div className='list-right-container-item'>
                     <div>
                         <ul>
+                            <h3 className='list-right-header'>Following</h3>
+                        </ul>
+                        <ul>
                             {props.items.map((friends, inx) => (
                                 <NavRightProfile
                                     photo={friends.photo}

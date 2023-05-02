@@ -8,9 +8,14 @@
     perspective-origin: right top;
     perspective: 1px;
     flex-shrink: 1;
-    min-height: 380px;
+    max-height: 0;
     contain: strict;
-}
+    top: 56px;
+    overflow-anchor: none;
+    min-height: 680px;
+    background-color: black;
+    flex-shrink: 9999;
+  }
 .list-left-container{
     display: flex;
     flex-direction: column;
@@ -19,6 +24,7 @@
     box-sizing: border-box;
     min-height: 380px;
     z-index: 0;
+    
 }
 
 .list-left-container-item {

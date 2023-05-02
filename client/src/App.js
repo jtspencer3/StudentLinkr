@@ -167,9 +167,10 @@ function App() {
       <Navbar items={pages} />
       <div className="body">
         <div className="content">
+        <div className="content-seven">
           <ProfileNavLeft items={pagesLeft} />
           <Routes>
-            <Route path="/" element={<Home items={posts} />} />
+            <Route path="/" element={<Home/>} />
             <Route path="about" element={<About />} />
             <Route path="profile" element={<Profile />} />
             <Route path="login" element={<Login />} />
@@ -177,6 +178,7 @@ function App() {
             <Route path="logout" element={<Logout />} />
           </Routes>
           <NavRight items={friends} />
+          </div>
         </div>
       </div>
     </div>

@@ -6,8 +6,24 @@
     overflow: visible;
     overflow-wrap: anywhere;
     margin: auto;
+    position: relative;
+    
+    
 }
+.post-info{
+    display: flex;
+    flex-direction: row;
+}
+.post-info-words{
+    display: flex;
+    flex-direction: column;
+}
+/* .user-name{
 
+} */
+.post-date{
+font-size: .8rem;
+}
 p {
     word-break: break-all;
     white-space: normal;

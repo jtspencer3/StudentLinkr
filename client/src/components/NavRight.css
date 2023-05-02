@@ -8,11 +8,15 @@
     perspective-origin: right top;
     perspective: 1px;
     flex-shrink: 1;
-    min-height: 674px;
+    max-height: 0;
     contain: strict;
-    color: #F1B82D;
+    top: 56px;
+    overflow-anchor: none;
+    min-height: 680px;
+    background-color: black;
 }
-.list-right-container{
+
+.list-right-container {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -42,5 +46,8 @@
     transform-style: preserve-3d;
     will-change: transform, scroll-position;
     perspective: 1px;
-    
+
+}
+.list-right-header{
+    color: #F1B82D;
 }

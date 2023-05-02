@@ -1,0 +1,116 @@
+
+/* .feed{
+        flex-shrink: 1;
+      
+        padding-right: 32px;
+      
+        justify-content: center;
+      
+        display: flex;
+      
+        padding-left: 32px;
+      
+        flex-direction: row;
+      
+        position: relative;
+      
+        flex-grow: 1;
+        
+            flex-wrap: nowrap;
+            
+                align-items: stretch;
+                    
+                  
+              
+          
+} */
+.feed-container{
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+.feed-content{
+    position: relative;
+    width: 100%;
+}
+
+/* .feed{
+    flex-basis: 360px;
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: sticky;
+    z-index: 0;
+    perspective-origin: right top;
+    perspective: 1px;
+    flex-shrink: 1;
+    min-width: 0;
+    contain: strict;
+    display:flex;
+} */
+/* .feed {
+    flex-basis: 500px;
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: sticky;
+    z-index: 0;
+    perspective-origin: right top;
+    perspective: 1px;
+    flex-shrink: 0;
+    min-width: 0;
+    contain: strict;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 16px;
+  }
+.feed-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-height: 0px;
+    box-sizing: border-box;
+    min-height: 380px;
+    z-index: 0;
+} */
+
+/* .feed-content{
+    flex-basis: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    perspective-origin: right top;
+    perspective: 1px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    min-height: 0;
+    overscroll-behavior-y: contain;
+    scrollbar-width: none;
+    transform-style: preserve-3d;
+    will-change: transform, scroll-position;    
+} */
+/* .feed-content {
+    flex-basis: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    perspective-origin: right top;
+    perspective: 1px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    min-height: 0;
+    overscroll-behavior-y: contain;
+    scrollbar-width: none;
+    transform-style: preserve-3d;
+    will-change: transform, scroll-position;
+  } */

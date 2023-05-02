@@ -1,5 +1,14 @@
- .home {
-  width: 60%;
-  margin: 0 auto;
-  
-} 
+.home {
+    flex-shrink: 1;
+    padding-right: 32px;
+    justify-content: center;
+    display: flex;
+    padding-left: 32px;
+    flex-direction: row;
+    position: relative;
+    flex-grow: 1;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    z-index: 0;
+    flex-basis: 766px;
+  }

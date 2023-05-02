@@ -15,11 +15,25 @@ ul {
   background-color: white;
   width: 100%;
 }
+
 .content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position:relative;
   top: 56px;
+  min-height: 380;
+}
+
+.content-seven{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    display: flex;
+    min-height: inherit;
+    justify-content: space-between;
 }
 
 .App-header {

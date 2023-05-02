@@ -120,6 +120,17 @@ app.post("/checkSession", (req, res) => {
     res.send({ message: "loggedOut", redirect: "/login" });
   }
 });
+app.post("/getHome", (req, res) => {
+  const ID = req.body.userID;
+
+  db.query("SELECT f.followerID, f.followedID, p.post_caption, p.user_id, p.postdatetime FROM followers f INNER JOIN posts p ON f.followedID = p.user_id WHERE f.followerID = ? ORDER BY p.postdatetime DESC;", ID).then((rows,fields) => {
+    console.log(rows[0]);
+    res.send( { message: "Success", postResults: rows[0] });
+  }).catch((err) => {
+    console.log(err);
+  })
+}
+)
 
 // Server Setup
 app.listen(PORT, console.log(`Server started on port ${PORT}`));

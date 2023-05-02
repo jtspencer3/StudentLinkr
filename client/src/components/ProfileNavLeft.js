@@ -7,7 +7,6 @@ function ProfileNavLeft(props) {
     <div className='list-left-page-item'>
       <div className='list-left-container'>
         <div className='list-left-container-item'>
-          <div>
             <ul className='list-left'>
               {props.items.map((pagesLeft, inx) => (
                 <ProfileNavLeftTab
@@ -21,7 +20,6 @@ function ProfileNavLeft(props) {
           </div>
         </div>
       </div>
-    </div>
   )
 }
 export default ProfileNavLeft;
