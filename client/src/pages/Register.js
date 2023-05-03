@@ -20,6 +20,11 @@ function Register() {
 
   Axios.defaults.withCredentials = true; //send info to front end to backend to see session is there
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    register();
+  }
+
   const register = () => {
     const firstName = firstNameRef.current.value;
     const lastName = lastNameRef.current.value;
@@ -78,49 +83,49 @@ function Register() {
   return (
     <div className="registration">
       <h1>Create an account</h1>
-      <label>
-        First Name:
-        <input type="text" ref={firstNameRef} />
-      </label>
-      <br />
-      <label>
-        Last Name:
-        <input type="text" ref={lastNameRef} />
-      </label>
-      <br />
-      <label>
-        Email:
-        <input type="email" ref={emailRef} />
-      </label>
-      <br />
-      <label>
-        Username:
-        <input type="text" ref={usernameRef} />
-      </label>
-      <br />
-      <label>
-        Graduation Year:
-        <input type="text" ref={graduationYearRef} />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input type="password" ref={passwordRef} />
-      </label>
-      <br />
-      <label>
-        Repeat Password:
-        <input type="password" ref={repeatPasswordRef} />
-      </label>
-      <br />
-      <button type="submit" onClick={register}>
-        Create Account
-      </button>
-      <br />
-      {isVisible ? <p className="error">Passwords must match</p> : null}
-      {formsNotFilled ? (
-        <p className="error">Please fill out all fields</p>
-      ) : null}
+      <form onClick={handleSubmit}>
+        <label>
+          First Name:
+          <input type="text" ref={firstNameRef} />
+        </label>
+        <br />
+        <label>
+          Last Name:
+          <input type="text" ref={lastNameRef} />
+        </label>
+        <br />
+        <label>
+          Email:
+          <input type="email" ref={emailRef} />
+        </label>
+        <br />
+        <label>
+          Username:
+          <input type="text" ref={usernameRef} />
+        </label>
+        <br />
+        <label>
+          Graduation Year:
+          <input type="text" ref={graduationYearRef} />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input type="password" ref={passwordRef} />
+        </label>
+        <br />
+        <label>
+          Repeat Password:
+          <input type="password" ref={repeatPasswordRef} />
+        </label>
+        <br />
+        <button type="submit">Create Account</button>
+        <br />
+        {isVisible ? <p className="error">Passwords must match</p> : null}
+        {formsNotFilled ? (
+          <p className="error">Please fill out all fields</p>
+        ) : null}
+      </form>
     </div>
   );
 }

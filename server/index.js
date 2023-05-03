@@ -11,6 +11,8 @@ const session = require("express-session");
 
 const json = require("jsonify");
 
+const moment = require("moment");
+
 // Port Number
 const PORT = process.env.PORT || 3001;
 
@@ -120,7 +122,6 @@ app.post("/checkSession", (req, res) => {
   ) {
     res.send({ message: "loggedOut", redirect: "/login" });
   } else {
-    console.log(req.session.user);
     res.send({ message: "loggedIn", userID: req.session.user });
   }
 });
@@ -133,8 +134,29 @@ app.post("/getHome", (req, res) => {
     ID
   )
     .then((rows, fields) => {
-      console.log(rows[0]);
       res.send({ message: "Success", postResults: rows[0] });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+//Sumbits post
+app.post("/submitPost", (req, res) => {
+  const userId = req.body.userID;
+  const postText = req.body.post;
+  var date = new Date();
+  date.toISOString().slice(0, 19).replace("T", " ");
+  //creates a set to be inserted into my sql query
+  const newPost = {
+    user_id: userId,
+    post_caption: postText,
+    postdatetime: date,
+    post_likes: 0,
+  };
+  //mySql query
+  db.query("INSERT INTO posts SET ?", newPost)
+    .then((result) => {
+      res.send({ message: "Success", postResults: result[0] });
     })
     .catch((err) => {
       console.log(err);

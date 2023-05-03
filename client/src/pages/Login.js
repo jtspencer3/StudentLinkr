@@ -13,9 +13,12 @@ function Login() {
   const [isVisible, setVisible] = useState(false);
   const [formsNotFilled, setFormsNotFilled] = useState(false);
 
-  const [loginStatus, setLoginStatus] = useState("");
-
   Axios.defaults.withCredentials = true; //send info to front end to backend to see session is there
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    login();
+  }
 
   const login = () => {
     const username = usernameRef.current.value;
@@ -58,29 +61,29 @@ function Login() {
   return (
     <div className="login">
       <h1>Log In</h1>
-      <label>
-        Username:
-        <input type="text" ref={usernameRef} />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input type="password" ref={passwordRef} />
-      </label>
-      <br />
-      <button type="submit" onClick={login}>
-        Login
-      </button>
-      <br />
-      <Link to="/register" className="register-link">
-        Don't have an account?
-      </Link>
-      {isVisible ? (
-        <p className="error">Username/password is incorrect</p>
-      ) : null}
-      {formsNotFilled ? (
-        <p className="error">Please fill out all fields</p>
-      ) : null}
+      <form onSubmit={handleSubmit}>
+        <label>
+          Username:
+          <input type="text" ref={usernameRef} />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input type="password" ref={passwordRef} />
+        </label>
+        <br />
+        <button type="submit">Login</button>
+        <br />
+        <Link to="/register" className="register-link">
+          Don't have an account?
+        </Link>
+        {isVisible ? (
+          <p className="error">Username/password is incorrect</p>
+        ) : null}
+        {formsNotFilled ? (
+          <p className="error">Please fill out all fields</p>
+        ) : null}
+      </form>
     </div>
   );
 }
