@@ -123,7 +123,7 @@ app.post("/checkSession", (req, res) => {
 app.post("/getHome", (req, res) => {
   const ID = req.body.userID;
 
-  db.query("SELECT f.followerID, f.followedID, p.post_caption, p.user_id, p.postdatetime FROM followers f INNER JOIN posts p ON f.followedID = p.user_id WHERE f.followerID = ? ORDER BY p.postdatetime DESC;", ID).then((rows,fields) => {
+  db.query("SELECT u.first_name, u.last_name, f.followerID, f.followedID, p.post_caption, p.postdatetime FROM followers f INNER JOIN posts p ON f.followedID = p.user_id INNER JOIN users u ON p.user_id = u.user_id WHERE f.followerID = '5' ORDER BY p.postdatetime DESC;", ID).then((rows,fields) => {
     console.log(rows[0]);
     res.send( { message: "Success", postResults: rows[0] });
   }).catch((err) => {
