@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Axios from "axios";
 import bcrypt from "bcryptjs";
 import "./../components/Register.css";
@@ -19,7 +19,7 @@ function Register() {
   const [formsNotFilled, setFormsNotFilled] = useState(false);
 
   Axios.defaults.withCredentials = true; //send info to front end to backend to see session is there
-  
+
   const register = () => {
     const firstName = firstNameRef.current.value;
     const lastName = lastNameRef.current.value;
@@ -60,6 +60,20 @@ function Register() {
       }
     });
   };
+
+  useEffect(() => {
+    // Submits form when user presses enter and prevents input fields from being blank
+    const listener = (event) => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        event.preventDefault();
+        register();
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  }, []);
 
   return (
     <div className="registration">
@@ -112,4 +126,3 @@ function Register() {
 }
 
 export default Register;
-

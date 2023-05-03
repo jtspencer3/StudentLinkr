@@ -41,15 +41,19 @@ function Login() {
     });
   };
 
-  // useEffect(() => {
-  //   //Knows if you are logged in or not
-  //   Axios.get("http://localhost:3001/login").then((response) => {
-  //     if (response.data.loggedIn === true) {
-  //       setLoginStatus(response.data.user[0].username);
-  //       console.log(response.data.user[0].username);
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    // Submits form when user presses enter and prevents input fields from being blank
+    const listener = (event) => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        event.preventDefault();
+        login();
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  }, []);
 
   return (
     <div className="login">
