@@ -107,7 +107,6 @@ function Home() {
       setPostArray(passResult);
     });
   };
-
   useEffect(() => {
     Axios.post("http://localhost:3001/checkSession").then((response) => {
       if (response.data.message === "loggedOut") {
