@@ -11,12 +11,13 @@ import NavRight from "./components/NavRight";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import About from "./pages/About";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import ProfileNavLeft from "./components/ProfileNavLeft.js";
 import Logout from "./pages/Logout";
+import Contact from "./pages/Contact";
+import Groups from "./pages/Groups";
 
 const friends = [
   { photo: zach, name: "Jill Moncrief" },
@@ -64,15 +65,15 @@ const friends = [
 ];
 const pages = [
   { name: "Home", link: "/" },
-  { name: "Groups", link: "/About" },
+  { name: "Groups", link: "/Groups" },
   { name: "Discover", link: "/" },
   { name: "Events", link: "/Profile" },
 ];
 const pagesLeft = [
   { photo: logo, name: "Tanner Renick", link: "/" },
-  { photo: groupsIcon, name: "Groups", link: "/About" },
-  { photo: settingsIcon, name: "Settings", link: "/About" },
-  { photo: errorIcon, name: "Report A Bug", link: "/About" },
+  { photo: groupsIcon, name: "Groups", link: "/Groups" },
+  { photo: settingsIcon, name: "Settings", link: "/Contact" },
+  { photo: errorIcon, name: "Report A Bug", link: "/Contact" },
   { photo: logoutIcon, name: "Logout", link: "/logout" },
 ];
 
@@ -168,17 +169,18 @@ function App() {
       {/* <div className="body">
         <div className="content">
           <div className="content-seven"> */}
-            {/* <ProfileNavLeft items={pagesLeft} /> */}
-            <Routes>
-              <Route path="/" element={<Home items={pagesLeft} />} />
-              <Route path="about" element={<About />} />
-              <Route path="profile" element={<Profile />} />
-              <Route path="login" element={<Login />} />
-              <Route path="register" element={<Register />} />
-              <Route path="logout" element={<Logout />} />
-            </Routes>
-            {/* <NavRight items={friends} /> */}
-          </div>
+      {/* <ProfileNavLeft items={pagesLeft} /> */}
+      <Routes>
+        <Route path="/" element={<Home items={pagesLeft} />} />
+        <Route path="groups" element={<Groups />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        <Route path="logout" element={<Logout />} />
+        <Route path="contact" element={<Contact />} />
+      </Routes>
+      {/* <NavRight items={friends} /> */}
+    </div>
     //     </div>
     //   </div>
     // </div>

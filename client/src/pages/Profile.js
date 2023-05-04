@@ -7,7 +7,6 @@ function Profile() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [userId, setUserId] = useState(null);
-  const [imagePath, setImagePath] = useState(null);
 
   //Checks login
   useEffect(() => {
@@ -27,8 +26,6 @@ function Profile() {
       }).then((response) => {
         const userData = response.data.user;
         setUser(userData);
-        console.log(userData.image);
-        setImagePath(userData.image); // Set the imagePath state when you receive the image path from the server
       });
     }
   }, [userId]);
