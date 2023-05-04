@@ -181,10 +181,7 @@ function Home(props) {
         <div className="content-seven">
           <ProfileNavLeft items={props.items} />
           <div className="home">
-            <div>
-              <SubmitPost items={userId} />
-            </div>
-            <Feed items={postArray} />
+            <Feed items={postArray} id={userId} />
           </div>
           <NavRight items={followingArray} />
         </div>
