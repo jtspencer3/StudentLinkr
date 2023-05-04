@@ -165,23 +165,23 @@ function App() {
   return (
     <div className="App">
       <Navbar items={pages} />
-      <div className="body">
+      {/* <div className="body">
         <div className="content">
-          <div className="content-seven">
-            <ProfileNavLeft items={pagesLeft} />
+          <div className="content-seven"> */}
+            {/* <ProfileNavLeft items={pagesLeft} /> */}
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home items={pagesLeft} />} />
               <Route path="about" element={<About />} />
               <Route path="profile" element={<Profile />} />
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
               <Route path="logout" element={<Logout />} />
             </Routes>
-            <NavRight items={friends} />
+            {/* <NavRight items={friends} /> */}
           </div>
-        </div>
-      </div>
-    </div>
+    //     </div>
+    //   </div>
+    // </div>
   );
 }
 

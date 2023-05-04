@@ -13,9 +13,12 @@ function Login() {
   const [isVisible, setVisible] = useState(false);
   const [formsNotFilled, setFormsNotFilled] = useState(false);
 
-  const [loginStatus, setLoginStatus] = useState("");
-
   Axios.defaults.withCredentials = true; //send info to front end to backend to see session is there
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    login();
+  }
 
   const login = () => {
     const username = usernameRef.current.value;
@@ -41,42 +44,46 @@ function Login() {
     });
   };
 
-  // useEffect(() => {
-  //   //Knows if you are logged in or not
-  //   Axios.get("http://localhost:3001/login").then((response) => {
-  //     if (response.data.loggedIn === true) {
-  //       setLoginStatus(response.data.user[0].username);
-  //       console.log(response.data.user[0].username);
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    // Submits form when user presses enter and prevents input fields from being blank
+    const listener = (event) => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        event.preventDefault();
+        login();
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  }, []);
 
   return (
     <div className="login">
       <h1>Log In</h1>
-      <label>
-        Username:
-        <input type="text" ref={usernameRef} />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input type="password" ref={passwordRef} />
-      </label>
-      <br />
-      <button type="submit" onClick={login}>
-        Login
-      </button>
-      <br />
-      <Link to="/register" className="register-link">
-        Don't have an account?
-      </Link>
-      {isVisible ? (
-        <p className="error">Username/password is incorrect</p>
-      ) : null}
-      {formsNotFilled ? (
-        <p className="error">Please fill out all fields</p>
-      ) : null}
+      <form onSubmit={handleSubmit}>
+        <label>
+          Username:
+          <input type="text" ref={usernameRef} />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input type="password" ref={passwordRef} />
+        </label>
+        <br />
+        <button type="submit">Login</button>
+        <br />
+        <Link to="/register" className="register-link">
+          Don't have an account?
+        </Link>
+        {isVisible ? (
+          <p className="error">Username/password is incorrect</p>
+        ) : null}
+        {formsNotFilled ? (
+          <p className="error">Please fill out all fields</p>
+        ) : null}
+      </form>
     </div>
   );
 }

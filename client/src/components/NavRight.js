@@ -15,8 +15,9 @@ function NavRight(props) {
                             {props.items.map((friends, inx) => (
                                 <NavRightProfile
                                     photo={friends.photo}
-                                    name={friends.name}
-                                    key={inx}
+                                    first_name={friends.first_name}
+                                    last_name = {friends.last_name}
+                                    // key={inx}
                                 />
                             ))}
                         </ul>
