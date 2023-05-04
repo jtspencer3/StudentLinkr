@@ -1,4 +1,18 @@
-.textbox {
-  width: 50%;
-  height: 50%;
+#postbox {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  border-style: solid;
+  border-width: thin;
+  height: auto;
+  width: auto;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  margin: auto;
+  position: relative;
+}
+.button-container {
+  justify-content: end;
 }

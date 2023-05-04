@@ -18,6 +18,7 @@ import ProfileNavLeft from "./components/ProfileNavLeft.js";
 import Logout from "./pages/Logout";
 import Contact from "./pages/Contact";
 import Groups from "./pages/Groups";
+import Discover from "./pages/Discover";
 
 const friends = [
   { photo: zach, name: "Jill Moncrief" },
@@ -66,13 +67,13 @@ const friends = [
 const pages = [
   { name: "Home", link: "/" },
   { name: "Groups", link: "/Groups" },
-  { name: "Discover", link: "/" },
+  { name: "Discover", link: "/Discover" },
   { name: "Events", link: "/Profile" },
 ];
 const pagesLeft = [
   { photo: logo, name: "Tanner Renick", link: "/" },
   { photo: groupsIcon, name: "Groups", link: "/Groups" },
-  { photo: settingsIcon, name: "Settings", link: "/Contact" },
+  { photo: settingsIcon, name: "Settings", link: "/Discover" },
   { photo: errorIcon, name: "Report A Bug", link: "/Contact" },
   { photo: logoutIcon, name: "Logout", link: "/logout" },
 ];
@@ -178,6 +179,7 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route path="logout" element={<Logout />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="discover" element={<Discover />} />
       </Routes>
       {/* <NavRight items={friends} /> */}
     </div>

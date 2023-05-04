@@ -3,7 +3,7 @@ import Axios from "axios";
 import "./../stylesheets/submitPost.css";
 //Sumbit post page,Front end
 function SubmitPost(props) {
-  const userIdRef = props.items;
+  const userIdRef = props.userId;
   const postRef = useRef();
   const [didPost, setDidPost] = useState(false);
   function handleSubmit(e) {
@@ -12,6 +12,7 @@ function SubmitPost(props) {
   }
   const submitPost = () => {
     const userID = userIdRef;
+    console.log(userID);
     const post = postRef.current.value;
     Axios.post("http://localhost:3001/submitPost", {
       userID: userID,
@@ -43,13 +44,17 @@ function SubmitPost(props) {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       {didPost ? <p>Post was successful</p> : null}
       <form onSubmit={handleSubmit}>
-        <textarea type="input" id="postBox" ref={postRef}></textarea>
-        <button type="submit" id="postButton">
-          Post
-        </button>
+        <div>
+          <textarea type="input" id="postbox" ref={postRef}></textarea>
+        </div>
+        <div className="button-container">
+          <button type="submit" id="postbutton">
+            Post
+          </button>
+        </div>
       </form>
     </div>
   );
