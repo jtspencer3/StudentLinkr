@@ -61,9 +61,7 @@ app.post("/register", (req, res) => {
   //Query to add new user into register
   db.query("INSERT INTO users SET ?", newUser)
     .then((result) => {
-      console.log("After query");
       res.send({ message: "Success", redirect: "/login" });
-      console.log("Inserted ${result.affectedRows} rows(s)");
     })
     .catch((err) => {
       console.log(err);
@@ -132,7 +130,6 @@ app.post("/getHome", (req, res) => {
     [ID]
   )
     .then((rows, fields) => {
-      console.log(rows[0]);
       res.send({ message: "Success", postResults: rows[0] });
     })
     .catch((err) => {
@@ -148,7 +145,6 @@ app.post("/getFollowing", (req, res) => {
     [ID]
   )
     .then((rows, fields) => {
-      console.log(rows[0]);
       res.send({ message: "Success", followingResults: rows[0] });
     })
     .catch((err) => {
