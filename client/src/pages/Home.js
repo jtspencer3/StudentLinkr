@@ -153,7 +153,6 @@ function Home(props) {
   };
   const loadFollowing = () => {
     const userID = userId;
-    console.log(userId);
     Axios.post("http://localhost:3001/getFollowing", {
       userID: userID,
     }).then((response) => {
