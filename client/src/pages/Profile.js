@@ -1,31 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./../stylesheets/Profile.css";
-import Zach from "./../Zach.jpg";
-import { useEffect, useState } from "react";
-import { useRef } from "react";
-import Axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Axios from "axios";
 
 function Profile() {
   const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   //Knows if you are logged in or not
-  //   console.log("Begin useEffect");
-  //   Axios.post("http://localhost:3001/checkSession").then((response) => {
-  //     if (response.data.message === "loggedOut") {
-  //       navigate(response.data.redirect);
-  //     }
-  //     console.log("Logged in");
-  //     idRef.current = response.data.id;
-  //     console.log(idRef.current);
-  //     console.log("hello");
-  //   });
-
-  //   console.log("End useEffect");
-  // }, [navigate]);
-
+  const [user, setUser] = useState(null);
   const [userId, setUserId] = useState(null);
+  const [imagePath, setImagePath] = useState(null);
+
   //Checks login
   useEffect(() => {
     Axios.post("http://localhost:3001/checkSession").then((response) => {
@@ -37,20 +20,38 @@ function Profile() {
     });
   }, [navigate]);
 
-  // useEffect(() => {
-  //   Axios.post("http://localhost:3001/loadProfile").then((response) => {});
-  // });
+  useEffect(() => {
+    if (userId !== null) {
+      Axios.post("http://localhost:3001/loadUser", {
+        userID: userId,
+      }).then((response) => {
+        const userData = response.data.user;
+        setUser(userData);
+        console.log(userData.image);
+        setImagePath(userData.image); // Set the imagePath state when you receive the image path from the server
+      });
+    }
+  }, [userId]);
 
   return (
     <div className="profile-container">
-      <img className="profile-pic" src={Zach} alt="Profile" />
-      <h1 className="name">Zach Bodmer</h1>
-      <h3 className="username">@DaZach</h3>
-      <h6 className="year">Graduation Year: 2023</h6>
-      <p className="bio">
-        This is the section for the bio, should we set a character limit for the
-        bio? 150 characters is probably good enough
-      </p>
+      {user && (
+        <img
+          className="profile-pic"
+          src={require(`../photos/${user[0].username}.png`)}
+          alt="Profile"
+        />
+      )}
+      {user && (
+        <>
+          <h1>
+            {user[0].first_name} {user[0].last_name}
+          </h1>
+          <h3>@{user[0].username}</h3>
+          <h6>Graduation Year: {user[0].academic_year}</h6>
+          <p>Bio: {user[0].user_bio}</p>
+        </>
+      )}
     </div>
   );
 }

@@ -11,8 +11,6 @@ const session = require("express-session");
 
 const json = require("jsonify");
 
-const moment = require("moment");
-
 // Port Number
 const PORT = process.env.PORT || 3001;
 
@@ -157,6 +155,23 @@ app.post("/submitPost", (req, res) => {
   db.query("INSERT INTO posts SET ?", newPost)
     .then((result) => {
       res.send({ message: "Success", postResults: result[0] });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+app.post("/loadUser", (req, res) => {
+  const userId = req.body.userID;
+
+  db.query(
+    "SELECT first_name, last_name, user_bio, academic_year, username, image FROM users WHERE user_id = ?",
+    [userId]
+  )
+    .then((result) => {
+      var userResult = JSON.stringify(result[0]);
+      var userJson = JSON.parse(userResult);
+      res.send({ message: "Success", user: userJson });
     })
     .catch((err) => {
       console.log(err);
