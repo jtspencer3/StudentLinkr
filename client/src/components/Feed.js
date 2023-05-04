@@ -9,7 +9,8 @@ function Feed(props) {
                 <div className="feed-content">
                     {props.items.map((post) => (
                         <Post
-                            name={post.followedID}
+                            first_name={post.first_name}
+                            last_name={post.last_name}
                             date={post.postdatetime}
                             post={post.post_caption}
                         />

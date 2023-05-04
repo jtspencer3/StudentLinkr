@@ -23,6 +23,7 @@
 } */
 .post-date{
 font-size: .8rem;
+font-weight: 400;
 }
 p {
     word-break: break-all;
