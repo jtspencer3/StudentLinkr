@@ -148,6 +148,19 @@ app.post("/getGroups", (req, res) => {
       console.log(err);
     });
 });
+
+app.post("/getGroups", (req, res) => {
+  //const ID = req.body.userID;
+  //Groups Query
+  db.query("SELECT organization_name, organization_bio FROM organization")
+    .then((rows, fields) => {
+      console.log("success, ", rows[0]);
+      res.send({ message: "Success", postResults: rows[0] });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 //pulls followering for user from database
 app.post("/getFollowing", (req, res) => {
   const ID = req.body.userID;
