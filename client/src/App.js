@@ -173,7 +173,7 @@ function App() {
       {/* <ProfileNavLeft items={pagesLeft} /> */}
       <Routes>
         <Route path="/" element={<Home items={pagesLeft} />} />
-        <Route path="groups" element={<Groups />} />
+        <Route path="groups" element={<Groups items={pagesLeft} />} />
         <Route path="profile" element={<Profile />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
