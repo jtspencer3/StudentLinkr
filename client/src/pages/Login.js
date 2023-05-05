@@ -15,6 +15,14 @@ function Login() {
 
   Axios.defaults.withCredentials = true; //send info to front end to backend to see session is there
 
+  useEffect(() => {
+    Axios.post("http://localhost:3001/checkSession").then((response) => {
+      if (response.data.message === "loggedIn") {
+        navigate("/");
+      }
+    });
+  }, [navigate]);
+
   function handleSubmit(e) {
     e.preventDefault();
     login();

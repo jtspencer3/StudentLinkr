@@ -142,7 +142,6 @@ app.post("/getGroups", (req, res) => {
   //Groups Query
   db.query("SELECT organization_name, organization_bio FROM organization")
     .then((rows, fields) => {
-      console.log("success, ", rows[0]);
       res.send({ message: "Success", postResults: rows[0] });
     })
     .catch((err) => {
@@ -235,7 +234,13 @@ app.post("/upload", upload.single("image"), (req, res) => {
           console.error(error);
           res.status(500).json({ message: "Failed to upload image" });
         } else {
-          res.status(200).json({ message: "Image uploaded successfully" });
+          db.query(
+            "UPDATE users SET hasImage = 1 WHERE user_id = ?",
+            req.session.user
+          ).then((result) => {
+            console.log(result[0]);
+            res.status(200).json({ message: "Image uploaded successfully" });
+          });
         }
       });
     })
