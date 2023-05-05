@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./../stylesheets/Profile.css";
 import { useNavigate } from "react-router-dom";
 import Axios from "axios";
+import { Link } from "react-router-dom";
+import UploadPhoto from "./UploadPhoto";
 
 function Profile() {
   const navigate = useNavigate();
@@ -48,8 +50,8 @@ function Profile() {
           className="profile-pic"
           src={
             hasProfilePic
-              ? require(`../photos/${user[0].username}.png`)
-              : require("../photos/DefaultIcon.png")
+              ? `${process.env.PUBLIC_URL}/uploads/${user[0].username}.png`
+              : `${process.env.PUBLIC_URL}/uploads/DefaultIcon.png`
           }
           alt="Profile"
         />
@@ -64,6 +66,7 @@ function Profile() {
           <p>Bio: {user[0].user_bio}</p>
         </>
       )}
+      <Link to={"/uploadphoto"}>Upload profile picture</Link>
     </div>
   );
 }

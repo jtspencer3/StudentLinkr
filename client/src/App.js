@@ -19,6 +19,7 @@ import Logout from "./pages/Logout";
 import Contact from "./pages/Contact";
 import Groups from "./pages/Groups";
 import Discover from "./pages/Discover";
+import UploadPhoto from "./pages/UploadPhoto";
 
 const friends = [
   { photo: zach, name: "Jill Moncrief" },
@@ -180,6 +181,7 @@ function App() {
         <Route path="logout" element={<Logout />} />
         <Route path="contact" element={<Contact />} />
         <Route path="discover" element={<Discover />} />
+        <Route path="uploadphoto" element={<UploadPhoto />} />
       </Routes>
       {/* <NavRight items={friends} /> */}
     </div>

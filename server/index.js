@@ -8,15 +8,16 @@ const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
-
+const fs = require("fs");
 const json = require("jsonify");
+const multer = require("multer");
 
 // Port Number
 const PORT = process.env.PORT || 3001;
 
 // Creating express object
 const app = express();
-
+const upload = multer({ dest: "uploads/" });
 app.use(express.json());
 app.use(
   cors({
@@ -153,7 +154,9 @@ app.post("/getGroups", (req, res) => {
 app.post("/getDiscover", (req, res) => {
   //const ID = req.body.userID;
   //Groups Query
-  db.query("SELECT u.first_name, u.last_name, p.post_caption, p.postdatetime FROM StudentLinkr.posts p JOIN StudentLinkr.users u ON p.user_id = u.user_id ORDER BY p.postdatetime;")
+  db.query(
+    "SELECT u.first_name, u.last_name, p.post_caption, p.postdatetime FROM StudentLinkr.posts p JOIN StudentLinkr.users u ON p.user_id = u.user_id ORDER BY p.postdatetime;"
+  )
     .then((rows, fields) => {
       console.log("success, ", rows[0]);
       res.send({ message: "Success", discoverResults: rows[0] });
@@ -211,6 +214,30 @@ app.post("/loadUser", (req, res) => {
       var userResult = JSON.stringify(result[0]);
       var userJson = JSON.parse(userResult);
       res.send({ message: "Success", user: userJson });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+app.post("/upload", upload.single("image"), (req, res) => {
+  const tempPath = req.file.path;
+  const extension = ".png";
+  var username = "";
+  db.query("SELECT username FROM users WHERE user_id = ?", req.session.user)
+    .then((result) => {
+      var userResult = JSON.stringify(result[0]);
+      var userJson = JSON.parse(userResult);
+      username = userJson[0].username;
+      const targetPath = "client/public/uploads/" + username + extension;
+      fs.rename(tempPath, targetPath, (error) => {
+        if (error) {
+          console.error(error);
+          res.status(500).json({ message: "Failed to upload image" });
+        } else {
+          res.status(200).json({ message: "Image uploaded successfully" });
+        }
+      });
     })
     .catch((err) => {
       console.log(err);
