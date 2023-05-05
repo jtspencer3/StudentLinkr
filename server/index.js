@@ -149,13 +149,14 @@ app.post("/getGroups", (req, res) => {
     });
 });
 
-app.post("/getGroups", (req, res) => {
+//Discover query
+app.post("/getDiscover", (req, res) => {
   //const ID = req.body.userID;
   //Groups Query
-  db.query("SELECT organization_name, organization_bio FROM organization")
+  db.query("SELECT u.first_name, u.last_name, p.post_caption, p.postdatetime FROM StudentLinkr.posts p JOIN StudentLinkr.users u ON p.user_id = u.user_id ORDER BY p.postdatetime;")
     .then((rows, fields) => {
       console.log("success, ", rows[0]);
-      res.send({ message: "Success", postResults: rows[0] });
+      res.send({ message: "Success", discoverResults: rows[0] });
     })
     .catch((err) => {
       console.log(err);

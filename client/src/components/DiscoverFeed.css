@@ -1,0 +1,12 @@
+.feed-container{
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+.feed-content{
+    position: relative;
+    width: 500px;
+}
