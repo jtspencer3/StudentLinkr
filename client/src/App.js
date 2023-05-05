@@ -180,7 +180,7 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route path="logout" element={<Logout />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="discover" element={<Discover />} />
+        <Route path="discover" element={<Discover items={pagesLeft} />} />
         <Route path="uploadphoto" element={<UploadPhoto />} />
       </Routes>
       {/* <NavRight items={friends} /> */}
