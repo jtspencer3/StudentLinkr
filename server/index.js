@@ -155,7 +155,7 @@ app.post("/getDiscover", (req, res) => {
   //const ID = req.body.userID;
   //Groups Query
   db.query(
-    "SELECT u.first_name, u.last_name, p.post_caption, p.postdatetime FROM StudentLinkr.posts p JOIN StudentLinkr.users u ON p.user_id = u.user_id ORDER BY p.postdatetime;"
+    "SELECT u.first_name, u.last_name, p.post_caption, p.postdatetime FROM StudentLinkr.posts p JOIN StudentLinkr.users u ON p.user_id = u.user_id ORDER BY p.postdatetime DESC;"
   )
     .then((rows, fields) => {
       console.log("success, ", rows[0]);
