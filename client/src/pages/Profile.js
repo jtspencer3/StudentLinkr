@@ -7,6 +7,7 @@ function Profile() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [userId, setUserId] = useState(null);
+  const [hasProfilePic, setHasProfilePic] = useState(false);
 
   //Checks login
   useEffect(() => {
@@ -30,12 +31,26 @@ function Profile() {
     }
   }, [userId]);
 
+  useEffect(() => {
+    if (user) {
+      if (user[0].hasImage == 0) {
+        setHasProfilePic(false);
+      } else {
+        setHasProfilePic(true);
+      }
+    }
+  });
+
   return (
     <div className="profile-container">
       {user && (
         <img
           className="profile-pic"
-          src={require(`../photos/${user[0].username}.png`)}
+          src={
+            hasProfilePic
+              ? require(`../photos/${user[0].username}.png`)
+              : require("../photos/DefaultIcon.png")
+          }
           alt="Profile"
         />
       )}

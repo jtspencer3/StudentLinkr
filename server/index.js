@@ -136,6 +136,7 @@ app.post("/getHome", (req, res) => {
       console.log(err);
     });
 });
+
 //pulls followering for user from database
 app.post("/getFollowing", (req, res) => {
   const ID = req.body.userID;
@@ -178,7 +179,7 @@ app.post("/loadUser", (req, res) => {
   const userId = req.body.userID;
 
   db.query(
-    "SELECT first_name, last_name, user_bio, academic_year, username, image FROM users WHERE user_id = ?",
+    "SELECT first_name, last_name, user_bio, academic_year, username, hasImage FROM users WHERE user_id = ?",
     [userId]
   )
     .then((result) => {
