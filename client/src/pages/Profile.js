@@ -3,7 +3,6 @@ import "./../stylesheets/Profile.css";
 import { useNavigate } from "react-router-dom";
 import Axios from "axios";
 import { Link } from "react-router-dom";
-import UploadPhoto from "./UploadPhoto";
 
 function Profile() {
   const navigate = useNavigate();
@@ -66,6 +65,8 @@ function Profile() {
           <p>Bio: {user[0].user_bio}</p>
         </>
       )}
+      <Link to={"/editprofile"}>Edit Profile</Link>
+      <br />
       <Link to={"/uploadphoto"}>Upload profile picture</Link>
     </div>
   );

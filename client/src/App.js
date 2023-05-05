@@ -20,6 +20,7 @@ import Contact from "./pages/Contact";
 import Groups from "./pages/Groups";
 import Discover from "./pages/Discover";
 import UploadPhoto from "./pages/UploadPhoto";
+import EditProfile from "./pages/EditProfile";
 
 const friends = [
   { photo: zach, name: "Jill Moncrief" },
@@ -69,12 +70,12 @@ const pages = [
   { name: "Home", link: "/" },
   { name: "Groups", link: "/Groups" },
   { name: "Discover", link: "/Discover" },
-  { name: "Events", link: "/Profile" },
+  { name: "Profile", link: "/Profile" },
 ];
 const pagesLeft = [
-  { photo: logo, name: "Tanner Renick", link: "/" },
+  { photo: logo, name: "Tanner Renick", link: "/profile" },
   { photo: groupsIcon, name: "Groups", link: "/Groups" },
-  { photo: settingsIcon, name: "Settings", link: "/Discover" },
+  { photo: settingsIcon, name: "Settings", link: "/editprofile" },
   { photo: errorIcon, name: "Report A Bug", link: "/Contact" },
   { photo: logoutIcon, name: "Logout", link: "/logout" },
 ];
@@ -157,14 +158,6 @@ const posts = [
   },
 ];
 function App() {
-  // const [data, setData] = React.useState(null);
-
-  // React.useEffect(() => {
-  //   fetch("/api")
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data.message));
-  // }, []);
-
   return (
     <div className="App">
       <Navbar items={pages} />
@@ -182,6 +175,7 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="discover" element={<Discover items={pagesLeft} />} />
         <Route path="uploadphoto" element={<UploadPhoto />} />
+        <Route path="editprofile" element={<EditProfile />} />
       </Routes>
       {/* <NavRight items={friends} /> */}
     </div>

@@ -206,7 +206,7 @@ app.post("/loadUser", (req, res) => {
   const userId = req.body.userID;
 
   db.query(
-    "SELECT first_name, last_name, user_bio, academic_year, username, hasImage FROM users WHERE user_id = ?",
+    "SELECT first_name, last_name, user_bio, academic_year, username, hasImage, user_email, user_bio FROM users WHERE user_id = ?",
     [userId]
   )
     .then((result) => {
@@ -246,6 +246,34 @@ app.post("/upload", upload.single("image"), (req, res) => {
     })
     .catch((err) => {
       console.log(err);
+    });
+});
+
+app.post("/editProfile", (req, res) => {
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const email = req.body.email;
+  const username = req.body.username;
+  const graduationYear = req.body.graduationYear;
+  const bio = req.body.bio;
+  //register
+  const newUser = {
+    first_name: firstName,
+    last_name: lastName,
+    user_email: email,
+    username: username,
+    academic_year: graduationYear,
+    user_bio: bio,
+  };
+
+  //Query to update user
+  db.query("UPDATE users SET ? WHERE user_id = ?", [newUser, req.session.user])
+    .then((result) => {
+      res.send({ message: "Success", redirect: "/profile" });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.send({ message: "Fail" });
     });
 });
 
