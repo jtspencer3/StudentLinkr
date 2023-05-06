@@ -17,7 +17,8 @@ function NavRight(props) {
                                     photo={friends.photo}
                                     first_name={friends.first_name}
                                     last_name = {friends.last_name}
-                                    // key={inx}
+                                    username ={friends.username}
+                                    key={inx}
                                 />
                             ))}
                         </ul>

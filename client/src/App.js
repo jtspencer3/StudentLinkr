@@ -22,55 +22,11 @@ import Discover from "./pages/Discover";
 import UploadPhoto from "./pages/UploadPhoto";
 import EditProfile from "./pages/EditProfile";
 
-const friends = [
-  { photo: zach, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-  { photo: logo, name: "Jill Moncrief" },
-];
 const pages = [
   { name: "Home", link: "/" },
   { name: "Groups", link: "/Groups" },
   { name: "Discover", link: "/Discover" },
-  { name: "Profile", link: "/Profile" },
+  { name: "Profile", link: "/Profile/ZachSucks" },
 ];
 const pagesLeft = [
   { photo: logo, name: "Tanner Renick", link: "/profile" },
@@ -80,83 +36,6 @@ const pagesLeft = [
   { photo: logoutIcon, name: "Logout", link: "/logout" },
 ];
 
-const posts = [
-  {
-    name: "ZACH BODMER",
-    dateTime: "DATETIME",
-    post: "This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider.",
-  },
-  {
-    name: "ZACH BODMER",
-    dateTime: "DATETIME",
-    post: "This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider.",
-  },
-  {
-    name: "ZACH BODMER",
-    dateTime: "DATETIME",
-    post: "This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider.",
-  },
-  {
-    name: "ZACH BODMER",
-    dateTime: "DATETIME",
-    post: "This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider.",
-  },
-  {
-    name: "ZACH BODMER",
-    dateTime: "DATETIME",
-    post: "This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider.",
-  },
-  {
-    name: "ZACH BODMER",
-    dateTime: "DATETIME",
-    post: "This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider.",
-  },
-  {
-    name: "ZACH BODMER",
-    dateTime: "DATETIME",
-    post: "This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider.",
-  },
-  {
-    name: "ZACH BODMER",
-    dateTime: "DATETIME",
-    post: "This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider.",
-  },
-  {
-    name: "ZACH BODMER",
-    dateTime: "DATETIME",
-    post: "This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider.",
-  },
-  {
-    name: "ZACH BODMER",
-    dateTime: "DATETIME",
-    post: "This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider.",
-  },
-  {
-    name: "ZACH BODMER",
-    dateTime: "DATETIME",
-    post: "This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider.",
-  },
-  {
-    name: "ZACH BODMER",
-    dateTime: "DATETIME",
-    post: "This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider.",
-  },
-  {
-    name: "ZACH BODMER",
-    dateTime: "DATETIME",
-    post: "This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider.",
-  },
-  {
-    name: "ZACH BODMER",
-    dateTime: "DATETIME",
-    post: "This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider.",
-  },
-  {
-    name: "ZACH BODMER",
-    dateTime: "DATETIME",
-    post: "This will be where the post content goes. I do not know if we should put a character limit on our posts or not but it is something we should consider.",
-  },
-];
 function App() {
   return (
     <div className="App">
@@ -174,6 +53,7 @@ function App() {
         <Route path="logout" element={<Logout />} />
         <Route path="contact" element={<Contact />} />
         <Route path="discover" element={<Discover items={pagesLeft} />} />
+        <Route path="profile/:username" element={<Profile />} />
         <Route path="uploadphoto" element={<UploadPhoto />} />
         <Route path="editprofile" element={<EditProfile />} />
       </Routes>

@@ -11,12 +11,13 @@ function Feed(props) {
     <div className="feed-container">
       <div className="feed-content">
         <SubmitPost userId={props.id} />
-        {props.items.map((post) => (
+        {props.items.map((post, inx) => (
           <Post
             first_name={post.first_name}
             last_name={post.last_name}
             date={post.postdatetime}
             post={post.post_caption}
+            key={inx}
           />
         ))}
       </div>

@@ -137,6 +137,7 @@ app.post("/getHome", (req, res) => {
       console.log(err);
     });
 });
+//NEEDS COMMENT
 app.post("/getGroups", (req, res) => {
   //const ID = req.body.userID;
   //Groups Query
@@ -169,7 +170,7 @@ app.post("/getFollowing", (req, res) => {
   const ID = req.body.userID;
 
   db.query(
-    "SELECT u.first_name, u.last_name, u.user_id FROM followers f INNER JOIN users u on f.followedID = u.user_id WHERE f.followerID = ?",
+    "SELECT u.first_name, u.last_name, u.user_id, u.username FROM followers f INNER JOIN users u on f.followedID = u.user_id WHERE f.followerID = ?",
     [ID]
   )
     .then((rows, fields) => {
@@ -202,6 +203,23 @@ app.post("/submitPost", (req, res) => {
     });
 });
 
+//Get Username for profile URLs
+app.get('/profile/:username', (req, res) => {
+  const username = req.params.username;
+  console.log("call");
+  console.log(username)
+  db.execute("SELECT u.user_id, u.first_name, u.last_name, u.username, u.user_bio, u.academic_year, u.hasImage, u.user_email FROM users u WHERE username = ?", [username])
+  .then((rows, fields) => {
+    console.log(rows[0]);
+    
+    //db.release();
+    res.json(rows[0]);
+  }).catch((err) => {
+    console.log(err);
+  });
+});
+
+//NEEDS COMMENT
 app.post("/loadUser", (req, res) => {
   const userId = req.body.userID;
 
@@ -219,6 +237,7 @@ app.post("/loadUser", (req, res) => {
     });
 });
 
+//NEEDS COMMENT
 app.post("/upload", upload.single("image"), (req, res) => {
   const tempPath = req.file.path;
   const extension = ".png";
@@ -249,6 +268,7 @@ app.post("/upload", upload.single("image"), (req, res) => {
     });
 });
 
+//NEEDS COMMENT
 app.post("/editProfile", (req, res) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
